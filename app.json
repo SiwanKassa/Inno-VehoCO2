@@ -1,0 +1,12 @@
+{
+  "name": "VehoCO2",
+  "displayName": "VehoCO2",
+  "expo": {
+    "name": "VehoCO2",
+    "slug": "VehoCO2",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
