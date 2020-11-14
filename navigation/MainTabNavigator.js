@@ -2,7 +2,7 @@ import React from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons'
 import MainViewScreen from "../screens/MainPage/MainView/MainViewScreen";
 import TipsViewScreen from "../screens/MainPage/TipsView/TipsViewScreen";
-import SettingsViewScreen from "../screens/MainPage/ProfileView/SettingsViewScreen";
+import SettingsViewScreen from "../screens/MainPage/SettingsView/SettingsViewScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 

@@ -5,14 +5,14 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#273142',
+        backgroundColor: '#19388a',
 
     },
     titleText:{
         fontSize: 40,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#254954',
+        color: 'white'
     },
     button: {
         alignItems: 'center',

@@ -16,13 +16,13 @@ export default StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-        backgroundColor: '#254954',
-        width: 200,
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        width: 100,
         height: 44,
         padding: 10,
         borderWidth: 1,
         borderColor: 'white',
-        borderRadius: 25,
         marginBottom: 10,
     },
     buttonText:{
@@ -38,6 +38,6 @@ export default StyleSheet.create({
         borderWidth: 1,
         borderColor: 'white',
         marginVertical: 10,
-        backgroundColor: '#254954',
+        backgroundColor: 'white',
     },
 });

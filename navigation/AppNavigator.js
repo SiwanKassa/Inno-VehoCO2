@@ -10,7 +10,7 @@ function AppNavigator() {
     return (
         /*navigation container and navigation stack for joining both of the navigators together */
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRoute={'Auth'}>
                 <Stack.Screen name="Auth" component={AuthNavigator} /*option for disabling the header*/ options={{headerShown: false}} />
                 <Stack.Screen name="App" component={MainTabNavigator} options={{headerShown: false}} />
             </Stack.Navigator>
