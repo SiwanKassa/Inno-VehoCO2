@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import VehoColors from './../../VehoColors';
 
 export default StyleSheet.create({
     container: {
@@ -8,7 +9,10 @@ export default StyleSheet.create({
         backgroundColor: '#19388a',
     },
     title: {
-        fontSize: 20,
+        width: '80%',
+        color: VehoColors.white,
+        textAlign: 'center',
+        fontSize: 26,
         fontWeight: 'bold',
     },
     separator: {
@@ -16,4 +20,24 @@ export default StyleSheet.create({
         height: 1,
         width: '80%',
     },
+    photoContainer: {
+        width: '100%',
+        height: 300,
+        justifyContent: 'center',
+        alignItems: 'center',             
+        aspectRatio: 1,
+        marginVertical: 24
+    },
+    image: {
+        borderRadius: 10,
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
+    },
+    tipText: {
+        width: '90%',
+        color: VehoColors.white,
+        textAlign: 'center',
+        fontSize: 20,
+    }
 });
