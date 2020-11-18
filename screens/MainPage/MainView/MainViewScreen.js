@@ -3,45 +3,75 @@ import styles from './MainViesStyle.js';
 import {inject, observer} from 'mobx-react';
 import { Text, View } from 'react-native';
 import {VictoryPie, VictoryLabel} from 'victory-native'
+import Svg from 'react-native-svg'
+import { Dimensions } from 'react-native';
+
+const window = Dimensions.get('window');
+const screen = Dimensions.get('screen');
 
 function MainViewScreen(props) {
 
     /*state for holding the graph data*/
     const [graphicData, setGraphicData] = useState([0,0]);
+    const [dimensions, setDimensions] = useState({ window, screen });
+
+    const onChange = ({ window, screen }) => {
+        setDimensions({ window, screen });
+    };
 
 /*function for adding the updated data to state when the component renders*/
     useEffect(() => {
-        setGraphicData([parseInt(props.store.drivingDataStore.ecoScore),(100 - parseInt(props.store.drivingDataStore.ecoScore))]); // Setting the data that we want to display
+        console.log(parseInt(props.store.drivingDataStore.ecoScore.value))
+        setGraphicData([(parseInt(props.store.drivingDataStore.ecoScore.value)),(100 - parseInt(props.store.drivingDataStore.ecoScore.value))]); // Setting the data that we want to display
+        Dimensions.addEventListener('change', onChange);
+        return () => {
+            Dimensions.removeEventListener('change', onChange);
+        };
     }, []);
+
     return(
       /*screen for home/main view*/
     <View style={styles.container}>
+        <View style={styles.headerContainer}>
+        <Text style={styles.mainViewHeader}>Today's data breakdown</Text>
+        </View>
+        <View style={styles.pieContainer}>
     <VictoryPie
-        standalone={true}
-        colorScale={["white", "black"]}
-    data={graphicData}
-        innerRadius={95}
-        labelRadius={100}
+        colorScale={["white", "#13265f"]}
+        data={graphicData}
+        innerRadius={125}
+        textRadius={100}
         animate={{ easing: 'exp' }}
         labelComponent={
             <VictoryLabel
+                style={{
+                    fontSize: 25,
+                    fill: "white",
+                }}
+                x={dimensions.screen.width * 0.5}
+                y={dimensions.screen.height *0.23}
+                textAnchor="middle"
                 verticalAnchor="middle"
-            style={{
-                fontSize: 30,
-                color: "black"
-
-            }}
-            x={180} y={180}
-            text={props.store.drivingDataStore.ecoScore+ "/100.0"}
-        />}
+                text={props.store.drivingDataStore.ecoScore.value + "/100.0\n  Today's eco-score"
+                }
+            />
+        }
     />
-
-      <Text style={styles.title}>Today's eco-score</Text>
-{/*        <Text>{props.store.drivingDataStore.distance}</Text>
-        <Text>{props.store.drivingDataStore.avgFuelConsumption}</Text>
-        <Text>{props.store.drivingDataStore.avgSpeed}</Text>
-        <Text>{props.store.drivingDataStore.ecoScore}</Text>*/}
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+        </View>
+        <View style={styles.dataContainer}>
+            <View style={styles.dataBox}>
+       <Text style={styles.dataText}>{props.store.drivingDataStore.distance.value + " m"}</Text>
+                <Text style={styles.dataText}>Distance driven: </Text>
+            </View>
+                <View style={styles.dataBox}>
+        <Text style={styles.dataText}>{props.store.drivingDataStore.avgFuelConsumption.value + " L/100 km"}</Text>
+                    <Text style={styles.dataText}>Avg. fuel consumption: </Text>
+                </View>
+                    <View style={styles.dataBox}>
+        <Text style={styles.dataText}>{props.store.drivingDataStore.avgSpeed.value + " km/h"}</Text>
+                        <Text style={styles.dataText}>Avg. speed: </Text>
+                    </View>
+    </View>
     </View>
   );
 }
