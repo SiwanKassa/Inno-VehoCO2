@@ -2491,7 +2491,7 @@ class DrivingData {
         ]
     }
     @observable distance = this.dummyData.tripSummaries[0].attributes[0];
-   @observable avgFuelConsumption = this.dummyData.tripSummaries[0].attributes[1];
+    @observable avgFuelConsumption = this.dummyData.tripSummaries[0].attributes[1];
     @observable avgSpeed = this.dummyData.tripSummaries[0].attributes[2];
     @observable ecoScore = this.dummyData.tripSummaries[0].attributes[3];
 }

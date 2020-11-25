@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from './SettingsViewStyle'
-import {Button, Text, TouchableOpacity, View} from 'react-native';
+import { Text, View} from 'react-native';
 import VehoTextInput from '../../../components/VehoTextInput';
 import VehoButton from '../../../components/VehoButton';
 import VehoColors from '../../VehoColors';
@@ -10,19 +10,20 @@ function SettingsViewScreen({navigation}) {
     return (
         /*screen for settings view*/
         <View style={styles.container}>
+            <View style={styles.titleContainer}>
             <Text style={styles.title}>Settings</Text>
             
-            <View style={{backgroundColor: VehoColors.white, width: 200, height: 200, borderRadius: 360}}>
-
+            <View style={{backgroundColor: VehoColors.white, width:200, height: 200, borderRadius: 360}}>
             </View>
-            <VehoTextInput style={styles.textInput} hint={'Full name'}/>
-            <VehoTextInput style={styles.textInput} hint={'Email address'}/>
+        </View>
+        <View style={styles.inputContainer}>
+            <VehoTextInput style={styles.input} hint={'Full name'}/>
+            <VehoTextInput style={styles.input} hint={'Email address'}/>
             <VehoPicker />
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
 
-            <VehoButton text='Save settings' color={VehoColors.secondary}/>
-            <VehoButton text='Logout' color={VehoColors.red} onPress={()=> navigation.navigate('Auth')} />
-
+            <VehoButton text='Save settings' style={styles.button}/>
+            <VehoButton text='Logout' style={styles.logOutButton} onPress={()=> navigation.navigate('Auth')} />
+        </View>
         </View>
     );
 }

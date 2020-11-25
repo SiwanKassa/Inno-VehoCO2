@@ -7,6 +7,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#19388a',
 
+
     },
     titleContainer:{
         flex:4,
@@ -26,7 +27,7 @@ export default StyleSheet.create({
         flex:5,
         alignSelf:'stretch',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
         marginTop:60,
 
