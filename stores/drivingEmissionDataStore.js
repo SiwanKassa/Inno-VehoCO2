@@ -1,6 +1,6 @@
 import { observable } from 'mobx'
 /*state management store for driving data*/
-export default class DrivingData {
+class DrivingData {
 
     @observable  dummyData={ "tripSummaries": [
             {
@@ -132,3 +132,5 @@ export default class DrivingData {
     @observable avgSpeed = this.dummyData.tripSummaries[0].attributes[2];
     @observable ecoScore = this.dummyData.tripSummaries[0].attributes[3];
 }
+
+export default DrivingData;

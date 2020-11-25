@@ -1,17 +1,16 @@
 import React, {useState,useEffect} from 'react';
-import styles from './MainViesStyle.js';
-import {inject, observer} from 'mobx-react';
-import { Text, View } from 'react-native';
+import styles from './TodaysViewStyle.js';
+import { Text, View,Dimensions } from 'react-native';
 import {VictoryPie, VictoryLabel} from 'victory-native'
-import Svg from 'react-native-svg'
-import { Dimensions } from 'react-native';
-
+import {inject, observer} from 'mobx-react';
 const window = Dimensions.get('window');
 const screen = Dimensions.get('screen');
 
-function MainViewScreen(props) {
 
-    /*state for holding the graph data*/
+const TodaysViewScreen = (props) =>{
+
+
+   /*state for holding the graph data*/
     const [graphicData, setGraphicData] = useState([0,0]);
     const [dimensions, setDimensions] = useState({ window, screen });
 
@@ -21,7 +20,7 @@ function MainViewScreen(props) {
 
 /*function for adding the updated data to state when the component renders*/
     useEffect(() => {
-        console.log(parseInt(props.store.drivingDataStore.ecoScore.value))
+        console.log(props.store.drivingDataStore)
         setGraphicData([(parseInt(props.store.drivingDataStore.ecoScore.value)),(100 - parseInt(props.store.drivingDataStore.ecoScore.value))]); // Setting the data that we want to display
         Dimensions.addEventListener('change', onChange);
         return () => {
@@ -29,8 +28,9 @@ function MainViewScreen(props) {
         };
     }, []);
 
+
     return(
-      /*screen for home/main view*/
+
     <View style={styles.container}>
         <View style={styles.headerContainer}>
         <Text style={styles.mainViewHeader}>Today's data breakdown</Text>
@@ -74,7 +74,9 @@ function MainViewScreen(props) {
     </View>
     </View>
   );
-}
-export default inject("store")(observer(MainViewScreen));
+};
+
+export default inject("store")(observer(TodaysViewScreen));
+
 
 

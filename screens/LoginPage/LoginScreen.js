@@ -3,7 +3,8 @@ import styles from './LoginScreenStyle.js'
 import { Alert,  Text, TouchableOpacity, TextInput, View, AsyncStorage,Button } from 'react-native';
 /*import {login, register, getUser, checkUser} from '../../utils/MediaAPI';*/
 
- function LoginScreen ({navigation}){
+
+function LoginScreen ({navigation}){
 
 /*
 
@@ -57,8 +58,11 @@ import { Alert,  Text, TouchableOpacity, TextInput, View, AsyncStorage,Button } 
 
              return (
                  <View style={styles.container}>
+                     <View style={styles.titleContainer}>
                      <Text style={styles.titleText}>Welcome To</Text>
                      <Text style={styles.titleText}>VEHO CO2 APP</Text>
+                     </View>
+                     <View style={styles.inputContainer}>
                      <TextInput
                          name={'username'}
                   /*       value={this.state.user.username}*/
@@ -86,8 +90,16 @@ import { Alert,  Text, TouchableOpacity, TextInput, View, AsyncStorage,Button } 
                      >
                          <Text style={styles.buttonText}>  Login </Text>
                      </TouchableOpacity>
-                     <Button title={'Register'} onPress={()=> navigation.navigate('Register')} />
 
+                         <TouchableOpacity
+                             title={'Register'}
+                             style={styles.registerButton}
+                             onPress={()=>navigation.navigate('Register')}
+                         >
+                             <Text style={styles.buttonText}>  Register </Text>
+                         </TouchableOpacity>
+
+                     </View>
                  </View>
              );
 

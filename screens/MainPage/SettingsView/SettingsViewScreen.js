@@ -21,10 +21,8 @@ function SettingsViewScreen({navigation}) {
             <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
 
             <VehoButton text='Save settings' color={VehoColors.secondary}/>
-            <VehoButton text='Logout' color={VehoColors.red}/>
+            <VehoButton text='Logout' color={VehoColors.red} onPress={()=> navigation.navigate('Auth')} />
 
-
-            <Button style={styles.button} title={'Logout'} onPress={()=> navigation.navigate('Auth')} />
         </View>
     );
 }
