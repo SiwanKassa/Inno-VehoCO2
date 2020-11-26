@@ -1,5 +1,4 @@
-import { StyleSheet } from 'react-native';
-import VehoColors from './../../VehoColors'
+import {StyleSheet} from "react-native";
 
 export default StyleSheet.create({
     container: {
@@ -7,11 +6,32 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#19388a',
+
+
     },
-    title: {
-        fontSize: 36,
-        fontWeight: 'bold',
-        color: VehoColors.white,
+    titleContainer:{
+        flex:4,
+        alignSelf:'stretch',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+
+    },
+    title:{
+        fontSize: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        marginBottom:10,
+    },
+    inputContainer:{
+        flex:5,
+        alignSelf:'stretch',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop:10,
+
     },
     separator: {
         marginVertical: 30,
@@ -20,27 +40,31 @@ export default StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-        backgroundColor: '#254954',
-        width: 200,
-        height: 44,
+        justifyContent: 'center',
+        backgroundColor: '#13265f',
+        width: '70%',
+        borderRadius:10,
+        marginBottom: 10
+    },
+    logOutButton: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#13265f',
+        width: '30%',
+        borderRadius:10,
+        marginBottom:10,
+    },
+
+    input: {
+        width: '90%',
+        fontSize: 20,
+        height: 55,
         padding: 10,
         borderWidth: 1,
         borderColor: 'white',
-        borderRadius: 25,
+        marginVertical: 10,
+        backgroundColor: 'white',
         marginBottom: 10,
+        borderRadius:10,
     },
-    buttonText:{
-        fontSize: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    textInput:{
-        width: '90%',
-        backgroundColor: VehoColors.primary,
-        padding: 12,
-        borderRadius: 8,
-        color: VehoColors.tertiary,
-        fontWeight: 'bold',
-        fontSize: 22,
-    }
 });

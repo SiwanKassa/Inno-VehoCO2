@@ -17,17 +17,18 @@ const VehoButton = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#ecf0f1',
+    backgroundColor: '#13265f',
     width: '90%',
     height: 60,
-    margin: 12,
     borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   button: {
     textAlign: 'center',
     textAlignVertical: 'center',
     fontWeight: 'bold',
-    fontSize: 26,
+    fontSize: 20,
     height: '100%',
     width: '100%',
     color: VehoColors.white,

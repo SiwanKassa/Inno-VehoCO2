@@ -31,11 +31,12 @@ const VehoPicker = (props) => {
 const styles = StyleSheet.create({
   container: {
     height: 55,
-    width: '90%'
+    width: '90%',
+      marginBottom:10,
   },
   button: {
     fontWeight: 'bold',
-    fontSize: 22,
+    fontSize: 20,
     height: '100%',
     width: '100%',
     color: VehoColors.white,
@@ -46,13 +47,13 @@ const styles = StyleSheet.create({
     color: VehoColors.white
   },
   picker: {
-    backgroundColor: VehoColors.primary,
+    backgroundColor: '#13265f',
     borderWidth: 0,
     fontSize: 22,
     height: 40
   },
   dropDown: {
-    backgroundColor: VehoColors.primary,
+    backgroundColor: '#13265f',
     borderWidth: 0
   }
 });
