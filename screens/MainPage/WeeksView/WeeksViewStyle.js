@@ -18,46 +18,35 @@ export default StyleSheet.create({
         color:'white',
         marginTop:30,
     },
-    pieContainer:{
+    chartContainer:{
         flex: 4,
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-end',
     },
-    dataContainer:{
+    buttonContainer:{
         flex: 2,
         alignSelf:'stretch',
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'flex-start',
-        margin:20,
-        marginTop:20,
-        marginBottom:50,
+        alignContent: 'center',
+        flexWrap:'wrap',
+
+    },
+    buttonText:{
+        color:'white',
+        fontSize: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#13265f',
-        borderRadius:25,
-    },
-    dataBox:{
-        marginBottom:10,
-        alignSelf:'stretch',
-        padding:5,
-        justifyContent: "center",
-        alignItems: 'flex-start',
-        flexDirection: 'row-reverse',
-
-    },
-    dataText:{
-        alignItems:'flex-start',
-        color:"white",
-        fontSize: 20,
-    },
-    title: {
-
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    separator: {
-        marginVertical: 30,
-        height: 1,
-        width: '80%',
+        width: '40%',
+        height:50,
+        borderRadius:10,
+        margin: 10,
+        color:'white',
     },
 });
