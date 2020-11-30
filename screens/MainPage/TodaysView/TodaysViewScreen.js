@@ -4,11 +4,11 @@ import { Text, View, Dimensions, Image, ScrollView } from "react-native";
 import { VictoryPie, VictoryLabel } from "victory-native";
 import { inject, observer } from "mobx-react";
 
-import Logo from './../../veho_logo.png'
+import Logo from "./../../veho_logo.png";
 import VehoColors from "./../../VehoColors";
 import VehoDetailContainer from "./../../../components/VehoDetailContainer";
-import VehoScoreDot from './../../../components/VehoScoreDot'
-import VehoScoreBar from './../../../components/VehoScoreBar'
+import VehoScoreDot from "./../../../components/VehoScoreDot";
+import VehoScoreBar from "./../../../components/VehoScoreBar";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -35,14 +35,15 @@ const TodaysViewScreen = (props) => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <VehoDetailContainer >
-      <ScrollView>
-      <View style={styles.photoContainer}>
-                <Image source={Logo} style={styles.image}></Image>
-      </View>
-        <View style={styles.headerContainer}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={{ justifyContent: "center", alignItems: "center" }}
+    >
+      <VehoDetailContainer>
+        <View style={styles.photoContainer}>
+          <Image source={Logo} style={styles.image}></Image>
         </View>
+        <View style={styles.headerContainer}></View>
         <View style={styles.pieContainer}>
           <VictoryPie
             colorScale={["white", "#13265f"]}
@@ -68,14 +69,18 @@ const TodaysViewScreen = (props) => {
             }
           />
         </View>
-        
+
         <View style={styles.dotContainer}>
-          <VehoScoreDot text="Current emissions" color={VehoColors.blue}></VehoScoreDot>
-          <VehoScoreDot text="Todays target" color={VehoColors.purple}></VehoScoreDot>
-          <VehoScoreDot text="Yesterdays emissions" color={VehoColors.pink}></VehoScoreDot>
+          <VehoScoreDot text="Current emissions" color={VehoColors.blue} />
+          <VehoScoreDot text="Todays target" color={VehoColors.purple} />
+          <VehoScoreDot text="Yesterdays emissions" color={VehoColors.pink} />
         </View>
 
-
+        <View style={styles.barContainer}>
+          <VehoScoreBar progress={"90%"} icon="car" />
+          <VehoScoreBar progress={"36%"} icon="cart" />
+          <VehoScoreBar progress={"63%"} icon="food-fork-drink" />
+        </View>
 
         <View style={styles.dataContainer}>
           <View style={styles.dataBox}>
@@ -98,10 +103,8 @@ const TodaysViewScreen = (props) => {
             <Text style={styles.dataText}>Avg. speed: </Text>
           </View>
         </View>
-        </ScrollView>
       </VehoDetailContainer>
-      
-    </View>
+    </ScrollView>
   );
 };
 

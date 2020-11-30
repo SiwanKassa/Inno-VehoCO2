@@ -1,16 +1,27 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import React, { Component, useRef } from 'react';
+import { View, StyleSheet, TouchableOpacity, Text, Animated, } from 'react-native';
 import VehoColors from '../screens/VehoColors';
 
 const VehoScoreDot = (props) => {
 
+  let opacAnim = useRef(new Animated.Value(0)).current;
+
+  React.useEffect(() => {
+    Animated.timing(opacAnim, {
+      toValue: 1,
+      duration: 800,
+      useNativeDriver: false,
+      delay: 500,
+    }).start();
+  }, [opacAnim]);
+
   return (
-  <View style={styles.container}>
+  <Animated.View style={{ ...styles.container, opacity: opacAnim}}>
     <View>
       <View style={{ ...styles.dot, backgroundColor: props.color}}></View>
       <Text style={styles.text}>{props.text}</Text>
     </View>
-  </View>
+  </Animated.View>
   );
 }
 

@@ -5,8 +5,6 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
     backgroundColor: VehoColors.background,
   },
   headerContainer: {
@@ -75,4 +73,7 @@ export default StyleSheet.create({
     justifyContent: 'space-evenly',
     marginHorizontal: 12
   },
+  barContainer: {
+    paddingTop: 8,
+  },  
 });
