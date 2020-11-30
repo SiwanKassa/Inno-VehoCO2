@@ -19,6 +19,11 @@ export default StyleSheet.create({
         color:'white',
         marginTop:30,
     },
+    chartHeader:{
+        fontSize:20,
+        color:'white',
+        marginTop:30,
+    },
     chartContainer:{
         flex: 4,
         flexDirection: 'column',
@@ -37,8 +42,9 @@ export default StyleSheet.create({
     buttonText:{
         color:'white',
         fontSize: 20,
-        alignItems: 'center',
+        alignContent: 'center',
         justifyContent: 'center',
+        flexDirection:'column'
     },
     button: {
         alignItems: 'center',

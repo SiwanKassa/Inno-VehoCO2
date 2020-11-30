@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import styles from "./WeeksViewStyle.js";
 import {Text, View, Dimensions, Button, TouchableOpacity} from "react-native";
-import { VictoryChart, VictoryBar } from "victory-native";
+import { VictoryChart, VictoryBar, VictoryAxis, LineSegment } from "victory-native";
 import { inject, observer } from "mobx-react";
 import VehoDetailContainer from "./../../../components/VehoDetailContainer";
-import VehoButton from "../../../components/VehoButton";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
 const WeeksViewScreen = (props) => {
     /*state for holding the graph data*/
     const [graphicData, setGraphicData] = useState([0, 0]);
-    const [xLine,setXLine] = useState([]);
     const [dimensions, setDimensions] = useState({ window, screen });
     const [shownData, setShownData] = useState(0);
+    const [chartLabelX, setChartLabelX] = useState("Date")
+    const [chartLabelY, setChartLabelY] = useState("Distance km")
+
 
     const onChange = ({ window, screen }) => {
         setDimensions({ window, screen });
@@ -24,15 +25,30 @@ const WeeksViewScreen = (props) => {
         setGraphicData([])
         props.store.drivingDataStore.dummyData.tripSummaries.map((item,key)=>{
             /*[0]=distance, [1] avgFuelConsumption, [2] avg speed, [3] ecoScore */
-            const value=item.attributes[num].value;
+
+            let value;
             const date = new Date(item.startTimestamp);
-            const usableDate = date.getDate() + "/" + date.getMonth()
-            console.log(usableDate);
-            console.log(value)
-            setXLine(xLine =>[usableDate,...xLine])
-            setGraphicData(graphicData =>[...graphicData,{x:usableDate,y:value}])
-        });
-    }
+            const usableDate = date.getDate() + "/" + (date.getMonth() +1)
+
+            if(num===0){
+                value=item.attributes[num].value / 1000
+                setChartLabelY("Distance (km)")
+            }
+            if(num===1){
+                value=item.attributes[num].value
+                setChartLabelY(" Avg fuel consumption (l/100 km)")
+            }
+            if(num===2){
+                value=Math.round(item.attributes[num].value);
+                setChartLabelY("Avg speed (km/h)")
+            }
+            if(num===3){
+                value=item.attributes[num].value
+                setChartLabelY("Eco score (%)")
+            }
+                setGraphicData(graphicData => [...graphicData, {x: usableDate, y: value}])
+        })
+    };
     /*function for adding the updated data to state when the component renders*/
     useEffect(() => {
         updateData(shownData)
@@ -46,21 +62,29 @@ const WeeksViewScreen = (props) => {
         <View style={styles.container}>
             <VehoDetailContainer >
                 <View style={styles.headerContainer}>
-                    <Text style={styles.mainViewHeader}>Today's data breakdown</Text>
+                    <Text style={styles.mainViewHeader}>Data from the past 9 days</Text>
                 </View>
                 <View style={styles.chartContainer}>
+                    <Text style={styles.chartHeader}>{chartLabelY}</Text>
                <VictoryChart
+                   fixLabelOverlap={true}
                    domainPadding={{x:20}}
+                       width={dimensions.screen.width * 0.95}
                >
                     <VictoryBar
-                    
-                        categories={{
-                            x:[xLine]
-                        }}
-                        
+                        fixLabelOverlap={true}
+                        barRatio={1}
                         data={graphicData}
-                        style={{ data: { fill: "#c43a31", stroke: "black", strokeWidth: 2 }}}
+                        style={{ data: { fill: "black", stroke: "black", strokeWidth: 0, color:"white"}}}
                     />
+                    <VictoryAxis
+                        fixLabelOverlap={true}
+                    />
+                   <VictoryAxis dependentAxis
+                                fixLabelOverlap={true}
+                                style={{color:"white"}}
+                   />
+
                 </VictoryChart>
                 </View>
                 <View style={styles.buttonContainer}>
@@ -73,11 +97,11 @@ const WeeksViewScreen = (props) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        title='Avg fuelconsumption'
+                        title='Avg fuel consumption'
                         style={styles.button}
                         onPress={()=>updateData(1)}
                     >
-                        <Text style={styles.buttonText}>Avg fuel consumption</Text>
+                        <Text style={styles.buttonText}> Avg (l/100 km) </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity

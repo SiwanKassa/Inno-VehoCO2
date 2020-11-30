@@ -11,12 +11,15 @@ function MainViewSwipeNavigation() {
     return (
         <Tab.Navigator
             tabBarOptions={{
-                showLabel:false
+                headerShown:true,
+                showLabel:false,
+                showIcon:false,
+                indicatorStyle:{opacity:0},
             }}
         >
-            <Tab.Screen name="Today" component={TodaysViewScreen} />
-            <Tab.Screen name="Week" component={WeeksViewScreen} />
-            <Tab.Screen name="Combined" component={TripListScreen} />
+            <Tab.Screen name="Today" options={{ headerShown: false }} component={TodaysViewScreen} />
+            <Tab.Screen name="Week" options={{ headerShown: false }} component={WeeksViewScreen} />
+            <Tab.Screen name="Combined" options={{ headerShown: false }} component={TripListScreen} />
         </Tab.Navigator>
     );
 }
