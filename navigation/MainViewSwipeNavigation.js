@@ -4,6 +4,7 @@ import WeeksViewScreen from "../screens/MainPage/WeeksView/WeeksViewScreen";
 import CombinedViewScreen from "../screens/MainPage/CombinedVIew/CombinedViewScreen";
 import TodaysViewScreen from "../screens/MainPage/TodaysView/TodaysViewScreen";
 import TripListScreen from "../screens/MainPage/CombinedVIew/TripListScreen";
+import VehoColors from './../screens/VehoColors'
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -15,6 +16,7 @@ function MainViewSwipeNavigation() {
                 showLabel:false,
                 showIcon:false,
                 indicatorStyle:{opacity:0},
+                style: {backgroundColor: VehoColors.background}
             }}
         >
             <Tab.Screen name="Today" options={{ headerShown: false }} component={TodaysViewScreen} />
