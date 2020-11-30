@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import VehoColors from './../../VehoColors'
 
 export default StyleSheet.create({
   container: {
@@ -6,7 +7,7 @@ export default StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#19388a',
+    backgroundColor: VehoColors.background,
   },
     headerContainer:{
       flex:2,
@@ -16,7 +17,6 @@ export default StyleSheet.create({
     mainViewHeader:{
       fontSize:30,
         color:'white',
-        marginTop:30,
     },
   pieContainer:{
     flex: 4,
@@ -59,5 +59,17 @@ separator: {
   marginVertical: 30,
   height: 1,
   width: '80%',
+},
+photoContainer: {
+  width: '100%',
+  height: 60,
+  marginTop: 24,
+  justifyContent: 'center',
+  alignItems: 'center',             
+},
+image: {
+  width: '100%',
+  height: '100%',
+  resizeMode: 'contain',
 },
 });

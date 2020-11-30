@@ -5,6 +5,9 @@ const VehoColors = {
     tertiary: '#0f006a',
     white: '#ffffff',
     red: '#ff0026',
+    card: '#2F3F94',
+    background: '#202E77',
+    input: '#3A4CB0'
 
 }
 

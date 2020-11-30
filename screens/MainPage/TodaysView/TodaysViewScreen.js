@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./TodaysViewStyle.js";
-import { Text, View, Dimensions } from "react-native";
+import { Text, View, Dimensions, Image } from "react-native";
 import { VictoryPie, VictoryLabel } from "victory-native";
 import { inject, observer } from "mobx-react";
 
+import Logo from './../../veho_logo.png'
 import VehoColors from "./../../VehoColors";
 import VehoDetailContainer from "./../../../components/VehoDetailContainer";
 const window = Dimensions.get("window");
@@ -34,6 +35,9 @@ const TodaysViewScreen = (props) => {
   return (
     <View style={styles.container}>
       <VehoDetailContainer >
+      <View style={styles.photoContainer}>
+                <Image source={Logo} style={styles.image}></Image>
+      </View>
         <View style={styles.headerContainer}>
           <Text style={styles.mainViewHeader}>Today's data breakdown</Text>
         </View>

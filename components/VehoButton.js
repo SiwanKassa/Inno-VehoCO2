@@ -17,7 +17,7 @@ const VehoButton = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#13265f',
+    backgroundColor: VehoColors.input,
     width: '90%',
     height: 60,
     borderRadius: 20,

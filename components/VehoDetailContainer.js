@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     width: "93%",
     height: "95%",
     borderRadius: 20,
-    backgroundColor: VehoColors.secondary,
+    backgroundColor: VehoColors.card,
     elevation: 10,
   }
 });

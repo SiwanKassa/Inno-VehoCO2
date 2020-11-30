@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     height: 60,
     width: '95%',
     borderRadius: 15,
-    backgroundColor: VehoColors.secondary,
+    backgroundColor: VehoColors.card,
     elevation: 10,
     flexDirection: 'row',
   },
@@ -103,13 +103,13 @@ const styles = StyleSheet.create({
   date: {
       fontSize: 20,
       paddingLeft: 10,
-      color: '#000000'
+      color: '#ffffff'
   },
   eco: {
       fontSize: 26,
       fontWeight: 'bold',
       paddingRight: 10,
-      color: '#000000'
+      color: '#ffffff'
   },
   dateContainer: {
     width: '60%',
@@ -128,7 +128,7 @@ const expandedStyles = StyleSheet.create({
       alignSelf:'center',
       width: '95%',
       borderRadius: 15,
-      backgroundColor: VehoColors.primary,
+      backgroundColor: VehoColors.input,
       elevation: 10,
       paddingVertical: 12
     },
@@ -139,7 +139,7 @@ const expandedStyles = StyleSheet.create({
     },
     key: {
         width: '30%',
-        fontSize: 20,
+        fontSize: 18,
         paddingLeft: 10,
         fontWeight: 'bold',
         color: '#ffffff'

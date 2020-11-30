@@ -53,9 +53,11 @@ const WeeksViewScreen = (props) => {
                    domainPadding={{x:20}}
                >
                     <VictoryBar
+                    
                         categories={{
                             x:[xLine]
                         }}
+                        
                         data={graphicData}
                         style={{ data: { fill: "#c43a31", stroke: "black", strokeWidth: 2 }}}
                     />

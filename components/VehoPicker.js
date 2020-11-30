@@ -9,9 +9,9 @@ const VehoPicker = (props) => {
   return (
     <DropDownPicker
         items={[
-            {label: 'A-series', value: 'aseries'},
-            {label: 'B-series', value: 'bseries'},
-            {label: 'C-series', value: 'cseries'},
+            {label: 'Mercedes-Benz A-series', value: 'aseries'},
+            {label: 'Mercedes-Benz B-series', value: 'bseries'},
+            {label: 'Mercedes-Benz C-series', value: 'cseries'},
         ]}
         defaultValue={selectedValue}
         containerStyle={styles.container}
@@ -47,10 +47,10 @@ const styles = StyleSheet.create({
     color: VehoColors.white
   },
   picker: {
-    backgroundColor: '#13265f',
-    borderWidth: 0,
+    backgroundColor: VehoColors.input,
     fontSize: 22,
-    height: 40
+    borderColor: '#000000',
+    height: 40,
   },
   dropDown: {
     backgroundColor: '#13265f',

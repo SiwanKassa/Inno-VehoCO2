@@ -1,15 +1,22 @@
 import * as React from 'react';
 import styles from './SettingsViewStyle'
-import { Text, View} from 'react-native';
+import { Text, View, Image } from 'react-native';
 import VehoTextInput from '../../../components/VehoTextInput';
 import VehoButton from '../../../components/VehoButton';
 import VehoColors from '../../VehoColors';
 import VehoPicker from '../../../components/VehoPicker';
+import VehoCard from './../../../components/VehoDetailContainer'
+import Logo from './../../veho_logo.png'
 
 function SettingsViewScreen({navigation}) {
     return (
         /*screen for settings view*/
+        
         <View style={styles.container}>
+            <VehoCard>
+            <View style={styles.photoContainer}>
+                <Image source={Logo} style={styles.image}></Image>
+            </View>
             <View style={styles.titleContainer}>
             <Text style={styles.title}>Settings</Text>
             
@@ -24,6 +31,7 @@ function SettingsViewScreen({navigation}) {
             <VehoButton text='Save settings' style={styles.button}/>
             <VehoButton text='Logout' style={styles.logOutButton} onPress={()=> navigation.navigate('Auth')} />
         </View>
+        </VehoCard>
         </View>
     );
 }

@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import VehoColors from './../../VehoColors'
 
 export default StyleSheet.create({
     container: {
         flexDirection: 'column',
-        backgroundColor: '#19388a',
+        backgroundColor: VehoColors.background,
     },
     headerContainer:{
         textAlignVertical: 'center',
