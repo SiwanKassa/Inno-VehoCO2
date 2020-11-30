@@ -16,8 +16,6 @@ function TripListScreen(props) {
     const renderItem = ({ item }) => (
         <VehoListItem item={item} date={item.startTimestamp} eco={item.attributes[3].value} selected={false}/>
       );
-    
-
 
     return(
         /*screen for home/main view*/
@@ -43,12 +41,6 @@ function TripListScreen(props) {
                     style={styles.flatlist}
                 />
             </SafeAreaView>
-
-
-
-
-        
-
         </View>
 
     );
