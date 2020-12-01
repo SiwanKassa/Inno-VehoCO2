@@ -6,6 +6,7 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        paddingTop: 16,
         backgroundColor: VehoColors.background,
     },
     title: {

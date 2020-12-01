@@ -1,13 +1,13 @@
 import {StyleSheet} from "react-native";
+import VehoColors from '../VehoColors';
 
 export default StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#19388a',
-
-
+        paddingTop: 16,
+        backgroundColor: VehoColors.background,
     },
     titleContainer:{
         flex:4,
@@ -57,6 +57,7 @@ export default StyleSheet.create({
         padding: 10,
         borderRadius:10,
     },
+
     input: {
         width: 300,
         fontSize: 20,
@@ -68,5 +69,12 @@ export default StyleSheet.create({
         backgroundColor: 'white',
         marginBottom: 20,
         borderRadius:10,
+    },
+    photoContainer: {
+        width: "100%",
+        height: 60,
+        marginTop: 24,
+        justifyContent: "center",
+        alignItems: "center",
     },
 });

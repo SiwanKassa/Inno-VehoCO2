@@ -4,8 +4,17 @@ import VehoColors from "./../../VehoColors";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: VehoColors.background,
+  },
+  containerScrollWrapper:{
+    alignItems: 'center',
+  },
+  containerScroll: {
+
+
   },
   headerContainer: {
     flex: 2,

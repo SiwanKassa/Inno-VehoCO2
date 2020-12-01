@@ -71,9 +71,10 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',             
     },
-    image: {
-        width: '100%',
-        height: '100%',
-        resizeMode: 'contain',
+    profilePic: {
+        backgroundColor: VehoColors.white,
+        width: 100,
+        height: 100,
+        borderRadius: 360
     },
 });
