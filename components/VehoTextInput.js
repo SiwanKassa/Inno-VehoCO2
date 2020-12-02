@@ -5,7 +5,7 @@ const VehoTextInput = (props) => {
   const [value, onChangeText] = React.useState('');
 
   return (
-  <View style={{width: '100%', margin: 12, alignItems: 'center'}}>
+  <View style={{width: '100%', alignItems: 'center'}}>
     <TextInput
       {...props}
       onChangeText={text => onChangeText(text)}

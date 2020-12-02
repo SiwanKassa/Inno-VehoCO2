@@ -64,24 +64,24 @@ const VehoScoreDot = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "80%",
     flexDirection: "row",
     justifyContent: "flex-start",
-    paddingHorizontal: 12,
     paddingVertical: 6,
   },
   iconContainer: {
     height: 50,
     width: 50,
+    marginLeft: 25,
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: VehoColors.blue,
   },
   bar: {
+    width: "100%",
     height: 40,
-    width: "75%",
-    marginHorizontal: 8,
+    marginHorizontal: 10,
     borderRadius: 100,
     alignSelf: "center",
     backgroundColor: VehoColors.white,

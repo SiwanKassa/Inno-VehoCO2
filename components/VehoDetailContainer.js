@@ -8,13 +8,14 @@ return <View style={styles.container}>{props.children}</View>;
 
 const styles = StyleSheet.create({
   container: {
-    width: "93%",
-    height: "90%",
+    width: "95%",
+    height: "93%",
     borderRadius: 20,
     backgroundColor: VehoColors.card,
     elevation: 10,
     justifyContent: "center",
     alignItems: "center",
+    padding: 0,
   }
 });
 

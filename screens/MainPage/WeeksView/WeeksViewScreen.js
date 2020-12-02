@@ -4,6 +4,7 @@ import {Text, View, Dimensions, Button, TouchableOpacity} from "react-native";
 import { VictoryChart, VictoryBar, VictoryAxis, LineSegment } from "victory-native";
 import { inject, observer } from "mobx-react";
 import VehoDetailContainer from "./../../../components/VehoDetailContainer";
+import VehoColors from '../../VehoColors';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -61,9 +62,7 @@ const WeeksViewScreen = (props) => {
     return (
         <View style={styles.container}>
             <VehoDetailContainer >
-                <View style={styles.headerContainer}>
-                    <Text style={styles.mainViewHeader}>Data from the past 9 days</Text>
-                </View>
+                    <Text style={styles.title}>Data from the past 9 days</Text>
                 <View style={styles.chartContainer}>
                     <Text style={styles.chartHeader}>{chartLabelY}</Text>
                <VictoryChart
@@ -75,7 +74,7 @@ const WeeksViewScreen = (props) => {
                         fixLabelOverlap={true}
                         barRatio={1}
                         data={graphicData}
-                        style={{ data: { fill: "black", stroke: "black", strokeWidth: 0, color:"white"}}}
+                        style={{ data: { fill: VehoColors.pink, stroke: "black", strokeWidth: 0, color:"white"}}}
                     />
                     <VictoryAxis
                         fixLabelOverlap={true}

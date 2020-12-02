@@ -40,14 +40,12 @@ const TodaysViewScreen = (props) => {
       <View style={styles.container}>
         <VehoCard>
           <View style={styles.containerScrollWrapper}>
-            <ScrollView style={styles.containerScroll} contentContainerStyle={{
+            <ScrollView showsVerticalScrollIndicator={false}
+                style={styles.containerScroll} contentContainerStyle={{
               justifyContent: 'center',
               alignItems: 'center',
-              width: '80%',
             }}>
-              <View style={styles.headerContainer}>
-                <Text style={styles.mainViewHeader}>Data from today</Text>
-              </View>
+                <Text style={styles.title}>Data from today</Text>
               <View style={styles.pieContainer}>
                 <VictoryPie
                     colorScale={['white', '#13265f']}

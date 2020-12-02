@@ -59,9 +59,6 @@ function LoginScreen({navigation}) {
 
   return (
       <View style={styles.container}>
-        <View style={styles.photoContainer}>
-          <Image source={Logo} style={styles.image}></Image>
-        </View>
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>Welcome To</Text>
           <Text style={styles.titleText}>VEHO CO2 APP</Text>
@@ -73,7 +70,7 @@ function LoginScreen({navigation}) {
               keyboardType='email-address'
               /*    onChangeText={ (text)=>{this.handleUsernameChange(text)}}*/
               placeholder={'username'}
-              placeholderTextColor='black'
+              placeholderTextColor='grey'
               style={styles.input}
           />
           <TextInput
@@ -82,27 +79,27 @@ function LoginScreen({navigation}) {
                       onChangeText={(text)=>{this.handlePasswordChange(text)}}*/
               placeholder={'password'}
               /*   secureTextEntry={true}*/
-              placeholderTextColor='black'
+              placeholderTextColor='grey'
               style={styles.input}
           />
 
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+                title={'Login'}
+                style={styles.button}
+                onPress={() => navigation.navigate('App')}
+            >
+              <Text style={styles.buttonText}> Login </Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-              title={'Login'}
-              style={styles.button}
-              onPress={() => navigation.navigate('App')}
-          >
-            <Text style={styles.buttonText}> Login </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-              title={'Register'}
-              style={styles.registerButton}
-              onPress={() => navigation.navigate('Register')}
-          >
-            <Text style={styles.buttonText}> Register </Text>
-          </TouchableOpacity>
-
+            <TouchableOpacity
+                title={'Register'}
+                style={styles.registerButton}
+                onPress={() => navigation.navigate('Register')}
+            >
+              <Text style={styles.buttonText}> Register </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
   );

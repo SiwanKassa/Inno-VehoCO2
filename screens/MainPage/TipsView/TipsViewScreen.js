@@ -26,25 +26,18 @@ function TipsViewScreen({navigation}) {
   };
 
   return (
-      /*screen for tips view*/
       <View style={styles.container}>
         <VehoCard>
-          <Text style={styles.title}>
-            Tips to lower your daily carbon footprint
-          </Text>
-
+          <Text style={styles.title}>Tips to lower your daily carbon footprint</Text>
           <View style={styles.photoContainer}>
             {isPlane ? planePhoto : pedalPhoto}
           </View>
 
           {isPlane ? planeTip : pedalTip}
+          <View style={styles.buttonContainer}>
+            <VehoButton text="Next tip" style={styles.button}  onPress={onNextClick}/>
+          </View>
 
-          <VehoButton
-              text="Next tip"
-              color={VehoColors.secondary}
-              onPress={onNextClick}
-              width="40%"
-          />
         </VehoCard>
       </View>
   );

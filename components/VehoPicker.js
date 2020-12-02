@@ -47,14 +47,14 @@ const styles = StyleSheet.create({
     color: VehoColors.white
   },
   picker: {
-    backgroundColor: VehoColors.input,
+    backgroundColor: VehoColors.blue,
     fontSize: 22,
     borderColor: '#000000',
     height: 40,
   },
   dropDown: {
-    backgroundColor: '#13265f',
-    borderWidth: 0
+    backgroundColor: VehoColors.input,
+    borderWidth: 0,
   }
 });
 
