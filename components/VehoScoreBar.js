@@ -39,7 +39,7 @@ const VehoScoreDot = (props) => {
           size={40}
         />
       </View>
-      <TouchableOpacity style={styles.touchable}>
+      <TouchableOpacity style={styles.touchable} onPress={props.showModal}>
         <Animated.View
           style={{
             ...styles.bar,

@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styles from "./TodaysViewStyle.js";
-import { Text, View, Dimensions, Image, ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  Dimensions,
+  Image,
+  ScrollView,
+  TouchableHighlight,
+  Modal,
+} from "react-native";
 import { VictoryPie, VictoryLabel } from "victory-native";
 import { inject, observer } from "mobx-react";
 
@@ -8,6 +16,7 @@ import VehoColors from "./../../VehoColors";
 import VehoScoreDot from "./../../../components/VehoScoreDot";
 import VehoScoreBar from "./../../../components/VehoScoreBar";
 import VehoCard from "./../../../components/VehoDetailContainer";
+import ShoppingModal from './../../../components/ShoppingModal'
 
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
@@ -16,6 +25,8 @@ const TodaysViewScreen = (props) => {
   /*state for holding the graph data*/
   const [graphicData, setGraphicData] = useState([0, 0]);
   const [dimensions, setDimensions] = useState({ window, screen });
+
+  const [shoppingModalVisible, setShoppingModalVisible] = useState(false);
 
   const onChange = ({ window, screen }) => {
     setDimensions({ window, screen });
@@ -46,6 +57,8 @@ const TodaysViewScreen = (props) => {
               alignItems: "center",
             }}
           >
+            <ShoppingModal visible={shoppingModalVisible} toggleOff={setShoppingModalVisible}/>
+
             <Text style={styles.title}>Data from today</Text>
             <View style={styles.pieContainer}>
               <VictoryPie
@@ -97,7 +110,12 @@ const TodaysViewScreen = (props) => {
                 co2={props.store.drivingDataStore.ecoScore.value}
                 icon="car"
               />
-              <VehoScoreBar progress={"36%"} co2={22} icon="cart" />
+              <VehoScoreBar
+                progress={"36%"}
+                co2={22}
+                icon="cart"
+                showModal={() => setShoppingModalVisible(true)}
+              />
               <VehoScoreBar progress={"63%"} co2={43} icon="food-fork-drink" />
               <View style={styles.disclaimerContainer}>
                 <Text style={styles.co2Disclaimer}>* kg of CO2</Text>
