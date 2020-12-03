@@ -11,6 +11,8 @@ const VehoColors = {
     pink: '#E22583',
     purple: '#8C45BB',
     blue: '#3B64F0',
+    yellow: '#EFB700',
+    green: '#008450'
     
 
 }

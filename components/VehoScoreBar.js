@@ -39,25 +39,29 @@ const VehoScoreDot = (props) => {
           size={40}
         />
       </View>
-      <Animated.View
-        style={{
-          ...styles.bar,
-          backgroundColor: VehoColors.input,
-          width: widthAnim.interpolate({
-            inputRange: [0, 1],
-            outputRange: ["0%", "85%"],
-          }),
-          opacity: opacAnim
-        }}
-      >
-        <LinearGradient
-          colors={[VehoColors.blue, VehoColors.purple, VehoColors.pink]}
-          locations={[0.0, 0.5, 0.8]}
-          style={{ ...styles.progress, width: props.progress }}
-          start={[0.0, 0.0]}
-          end={[1.0, 1.0]}
-        />
-      </Animated.View>
+      <TouchableOpacity style={styles.touchable}>
+        <Animated.View
+          style={{
+            ...styles.bar,
+            backgroundColor: VehoColors.input,
+            width: widthAnim.interpolate({
+              inputRange: [0, 1],
+              outputRange: ["0%", "90%"],
+            }),
+            opacity: opacAnim,
+          }}
+        >
+          <LinearGradient
+            colors={[VehoColors.blue, VehoColors.purple, VehoColors.pink]}
+            locations={[0.0, 0.5, 0.8]}
+            style={{ ...styles.progress, width: props.progress }}
+            start={[0.0, 0.0]}
+            end={[1.0, 1.0]}
+          >
+            <Text style={styles.co2}>{props.co2}</Text>
+          </LinearGradient>
+        </Animated.View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -69,6 +73,11 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     paddingVertical: 6,
   },
+  touchable: {
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+  },
   iconContainer: {
     height: 50,
     width: 50,
@@ -77,6 +86,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: VehoColors.blue,
+  },
+  co2: {
+    fontSize: 22,
+    fontWeight: "bold",
+    width: "100%",
+    textAlign: "center",
+    textAlignVertical: "center",
+    justifyContent: "center",
+    color: VehoColors.white,
   },
   bar: {
     width: "100%",

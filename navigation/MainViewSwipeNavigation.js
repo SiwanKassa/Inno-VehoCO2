@@ -12,7 +12,7 @@ const Tab = createMaterialTopTabNavigator();
 
 function MainViewSwipeNavigation() {
   return (
-      <Tab.Navigator tabBar={() => null}>
+      <Tab.Navigator tabBar={() => null} springConfig={{damping:700, mass:10}}>
         <Tab.Screen name="Today" options={{headerShown: false}} component={TodaysViewScreen}/>
         <Tab.Screen name="Week" options={{headerShown: false}} component={WeeksViewScreen}/>
         <Tab.Screen name="Combined" options={{headerShown: false}} component={TripListScreen}/>

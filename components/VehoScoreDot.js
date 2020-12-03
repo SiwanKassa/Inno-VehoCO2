@@ -1,9 +1,15 @@
-import React, { Component, useRef } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Animated, } from 'react-native';
-import VehoColors from '../screens/VehoColors';
+import React, { Component, useRef } from "react";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  Animated,
+} from "react-native";
+import { TextSize } from "victory-native";
+import VehoColors from "../screens/VehoColors";
 
 const VehoScoreDot = (props) => {
-
   let opacAnim = useRef(new Animated.Value(0)).current;
 
   React.useEffect(() => {
@@ -16,35 +22,44 @@ const VehoScoreDot = (props) => {
   }, [opacAnim]);
 
   return (
-  <Animated.View style={{ ...styles.container, opacity: opacAnim}}>
-    <View>
-      <View style={{ ...styles.dot, backgroundColor: props.color}}></View>
-      <Text style={styles.text}>{props.text}</Text>
-    </View>
-  </Animated.View>
+    <Animated.View style={{ ...styles.container, opacity: opacAnim }}>
+      <View>
+        <View style={{ ...styles.dot, backgroundColor: props.color }}>
+          <Text style={styles.value}>{props.value}</Text>
+        </View>
+        <Text style={styles.text}>{props.text}</Text>
+      </View>
+    </Animated.View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    width: '30%',
+    width: "30%",
     borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   dot: {
     height: 40,
     width: 40,
     borderRadius: 100,
-    alignSelf: 'center',
-    backgroundColor: VehoColors.white
+    alignSelf: "center",
+    justifyContent: "center",
+    backgroundColor: VehoColors.white,
   },
   text: {
     color: VehoColors.white,
-    textAlign: 'center',
+    textAlign: "center",
     width: 70,
-  }
+  },
+  value: {
+    textAlign: "center",
+    textAlignVertical: "center",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: VehoColors.white,
+  },
 });
-
 
 export default VehoScoreDot;
