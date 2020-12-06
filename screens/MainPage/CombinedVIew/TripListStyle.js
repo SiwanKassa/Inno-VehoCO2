@@ -3,14 +3,19 @@ import VehoColors from './../../VehoColors'
 
 export default StyleSheet.create({
     container: {
+        flex:1,
         flexDirection: 'column',
+        justifyContent:'center',
+        alignItems:'center',
         backgroundColor: VehoColors.background,
     },
     headerContainer:{
+        flex:1,
         textAlignVertical: 'center',
         alignItems: 'center',
     },
     subheaderContainer: {
+        flex:1,
         width: '100%',
         flexDirection: 'row',
         alignContent: 'center',
@@ -32,7 +37,11 @@ export default StyleSheet.create({
         paddingRight: 10
     },
     listContainer: {
+        flex:12,
         width: '100%',
+    },
+    flatList:{
+      flex:1
     },
     mainViewHeader:{
         fontSize: 26,
