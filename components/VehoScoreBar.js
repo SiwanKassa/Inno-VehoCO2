@@ -31,7 +31,7 @@ const VehoScoreDot = (props) => {
   }, [opacAnim]);
 
   return (
-    <View style={styles.container}>
+    <Animated.View style={{...styles.container, opacity: opacAnim}}>
       <View style={styles.iconContainer}>
         <MaterialCommunityIcons
           name={props.icon}
@@ -48,7 +48,6 @@ const VehoScoreDot = (props) => {
               inputRange: [0, 1],
               outputRange: ["0%", "90%"],
             }),
-            opacity: opacAnim,
           }}
         >
           <LinearGradient
@@ -62,7 +61,7 @@ const VehoScoreDot = (props) => {
           </LinearGradient>
         </Animated.View>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 };
 

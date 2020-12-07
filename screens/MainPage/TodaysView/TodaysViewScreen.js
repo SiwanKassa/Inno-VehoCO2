@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./TodaysViewStyle.js";
 import {
   Text,
@@ -8,6 +8,7 @@ import {
   ScrollView,
   TouchableHighlight,
   Modal,
+  Animated
 } from "react-native";
 import { VictoryPie, VictoryLabel } from "victory-native";
 import { inject, observer } from "mobx-react";
@@ -16,7 +17,9 @@ import VehoColors from "./../../VehoColors";
 import VehoScoreDot from "./../../../components/VehoScoreDot";
 import VehoScoreBar from "./../../../components/VehoScoreBar";
 import VehoCard from "./../../../components/VehoDetailContainer";
-import ShoppingModal from './../../../components/ShoppingModal'
+import PieLegend from "./../../../components/PieLegend";
+import ShoppingModal from "./../../../components/ShoppingModal";
+import { NavigationRouteContext } from "@react-navigation/native";
 
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
@@ -25,6 +28,17 @@ const TodaysViewScreen = (props) => {
   /*state for holding the graph data*/
   const [graphicData, setGraphicData] = useState([0, 0]);
   const [dimensions, setDimensions] = useState({ window, screen });
+
+  let opacAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(opacAnim, {
+      toValue: 1,
+      duration: 800,
+      useNativeDriver: false,
+      delay: 500,
+    }).start();
+  }, [opacAnim]);
 
   const [shoppingModalVisible, setShoppingModalVisible] = useState(false);
 
@@ -57,36 +71,38 @@ const TodaysViewScreen = (props) => {
               alignItems: "center",
             }}
           >
-            <ShoppingModal visible={shoppingModalVisible} toggleOff={setShoppingModalVisible}/>
+            <ShoppingModal
+              visible={shoppingModalVisible}
+              toggleOff={setShoppingModalVisible}
+            />
 
             <Text style={styles.title}>Data from today</Text>
-            <View style={styles.pieContainer}>
+            <Animated.View style={{...styles.pieContainer, opacity: opacAnim}}>
               <VictoryPie
-                colorScale={["white", "#13265f"]}
                 data={graphicData}
                 innerRadius={125}
                 textRadius={100}
+                padAngle={4}
+                colorScale={[VehoColors.blue, VehoColors.pink]}
                 animate={{ easing: "exp" }}
+                labels={() => ["Eco score\n", props.store.drivingDataStore.ecoScore.value]}
                 labelComponent={
                   <VictoryLabel
-                    style={{
-                      fontSize: 25,
-                      fill: "white",
-                    }}
+                    style={[
+                      { fill: "white", fontSize: 24 },
+                      { fill: "white", fontSize: 46 },
+                    ]}
                     x={dimensions.screen.width * 0.5}
                     y={dimensions.screen.height * 0.23}
                     textAnchor="middle"
                     verticalAnchor="middle"
-                    text={
-                      props.store.drivingDataStore.ecoScore.value +
-                      "/100.0\n  Today's eco-score"
-                    }
+                    text={`Eco score \n${props.store.drivingDataStore.ecoScore.value}`}
                   />
                 }
-              />
-            </View>
+              ></VictoryPie>
+            </Animated.View>
 
-            <View style={styles.dotContainer}>
+            <Animated.View style={{...styles.dotContainer, opacity: opacAnim}}>
               <VehoScoreDot
                 text="Current emissions"
                 value={82}
@@ -102,12 +118,13 @@ const TodaysViewScreen = (props) => {
                 value={99}
                 color={VehoColors.pink}
               />
-            </View>
+            </Animated.View>
 
-            <View style={styles.barContainer}>
+            <Animated.View style={{...styles.barContainer, opacity: opacAnim}}>
               <VehoScoreBar
                 progress={`${props.store.drivingDataStore.ecoScore.value}%`}
                 co2={props.store.drivingDataStore.ecoScore.value}
+                showModal={() => props.navigation.navigate('Combined')}
                 icon="car"
               />
               <VehoScoreBar
@@ -116,11 +133,11 @@ const TodaysViewScreen = (props) => {
                 icon="cart"
                 showModal={() => setShoppingModalVisible(true)}
               />
-              <VehoScoreBar progress={"63%"} co2={43} icon="food-fork-drink" />
+              <VehoScoreBar progress={"63%"} co2={43} icon="flash" />
               <View style={styles.disclaimerContainer}>
                 <Text style={styles.co2Disclaimer}>* kg of CO2</Text>
               </View>
-            </View>
+            </Animated.View>
 
             <View style={styles.dataContainer}>
               <View style={styles.dataBox}>
