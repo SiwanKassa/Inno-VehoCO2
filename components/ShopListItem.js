@@ -6,6 +6,10 @@ const ShopListItem = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.itemContainer}>
+        <View style={styles.amountContainer}>
+          <Text style={styles.amount}>{props.amount}</Text>
+        </View>
+
         <View style={styles.nameContainer}>
           <Text style={styles.name}>{props.name}</Text>
         </View>
@@ -36,8 +40,19 @@ const styles = StyleSheet.create({
     backgroundColor: VehoColors.card,
     elevation: 10,
     flexDirection: "row",
-    justifyContent: 'space-between',
-    paddingHorizontal: 8
+    paddingRight: 8,
+    marginBottom: 8
+  },
+  amountContainer: {
+    width: "10%",
+    justifyContent: "center",
+    paddingRight: 4,
+    borderTopLeftRadius: 15,
+    borderBottomLeftRadius: 15,
+    paddingLeft: 12,
+  },
+  amount: {
+    color: VehoColors.white,
   },
   name: {
     fontSize: 16,
@@ -47,14 +62,17 @@ const styles = StyleSheet.create({
   eco: {
     fontSize: 16,
     fontWeight: "bold",
+    textAlign: 'right',
     paddingRight: 10,
     color: VehoColors.white,
   },
   nameContainer: {
+    width: "50%",
     height: "100%",
     justifyContent: "center",
   },
   ecoContainer: {
+    width: "40%",
     height: "100%",
     justifyContent: "center",
   },

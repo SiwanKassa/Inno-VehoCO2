@@ -2,7 +2,6 @@ import React, { Component, useState } from "react";
 import {
   View,
   StyleSheet,
-  TouchableWithoutFeedback,
   Text,
   FlatList,
   SafeAreaView,
@@ -17,6 +16,7 @@ const ShoppingModal = (props) => {
       key={item.key}
       item={item}
       name={item.name}
+      amount={item.amount}
       eco={item.eco}
       selected={false}
     />
@@ -25,13 +25,75 @@ const ShoppingModal = (props) => {
   const groceries = [
     {
       name: "Oltermanni",
-      eco: "12g*",
-      key: 1,
+      amount: 1,
+      eco: "8g",
+      key: '1',
     },
     {
       name: "Kinkkuvoileipä",
-      eco: "24g*",
-      key: 2,
+      amount: 1,
+      eco: "4.2g",
+      key: '2',
+    },
+    {
+      name: "Täysjyväspagetti",
+      amount: 1,
+      eco: "1.4g",
+      key: '3',
+    },
+    {
+      name: "Broilerpasta",
+      amount: 1,
+      eco: "2.1g",
+      key: '4',
+    },
+    {
+      name: "Leipäjuustosalaatti",
+      amount: 1,
+      eco: "0.4g",
+      key: '5',
+    },
+    {
+      name: "Mifusuikale",
+      amount: 2,
+      eco: "2.3g",
+      key: '6',
+    },
+    {
+      name: "Wok classic",
+      amount: 1,
+      eco: "2.2g",
+      key: '7',
+    },
+    {
+      name: "Maitorahka",
+      amount: 2,
+      eco: "0.4g",
+      key: '8',
+    },
+    {
+      name: "Kurkku",
+      amount: 1,
+      eco: "0.1g",
+      key: '9',
+    },
+    {
+      name: "Salaatti",
+      amount: 1,
+      eco: "0.4g",
+      key: '10',
+    },
+    {
+      name: "Muovikassi",
+      amount: 1,
+      eco: "2.3g",
+      key: '11',
+    },
+    {
+      name: "Parsakaali",
+      amount: 1,
+      eco: "0.2g",
+      key: '12',
     },
   ];
 
@@ -53,7 +115,7 @@ const ShoppingModal = (props) => {
           <Text style={styles.modalHeader}>Todays groceries 9.12.</Text>
 
           <View style={styles.subheaderContainer}>
-            <Text style={styles.subHeader}>Item</Text>
+            <Text style={styles.subHeader}>No / Item</Text>
             <Text style={styles.subHeader}>g/CO2</Text>
           </View>
           <SafeAreaView style={styles.listContainer}>

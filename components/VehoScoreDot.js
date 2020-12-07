@@ -25,7 +25,7 @@ const VehoScoreDot = (props) => {
     <Animated.View style={{ ...styles.container, opacity: opacAnim }}>
       <View>
         <View style={{ ...styles.dot, backgroundColor: props.color }}>
-          <Text style={styles.value}>{props.value}</Text>
+          <Text style={styles.value}>{Math.round(props.value)}</Text>
         </View>
         <Text style={styles.text}>{props.text}</Text>
       </View>
