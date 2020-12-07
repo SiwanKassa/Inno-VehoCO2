@@ -15,22 +15,20 @@ function SettingsViewScreen({navigation}) {
         <VehoCard>
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.container}>
-              <Text style={styles.titleContainer}>
-                <Text style={styles.titleText}>Settings</Text>
-              </Text>
-              {/*
-                <View style={styles.profilePic}>
-                  //<image></image>
+              <Text style={styles.title}>Settings</Text>
+              <ScrollView bounces={false} style={styles.containerScroll}>
+                <View style={styles.profilePicContainer}>
+                  <View style={styles.profilePic}>
+                  </View>
                 </View>
-              */
-              }
-              <View style={styles.inputContainer}>
-                <ScrollView bounces={false} style={styles.containerScroll}>
+                <View style={styles.inputContainer}>
+
                   <VehoTextInput hint={'Full name'}/>
                   <VehoTextInput hint={'Email address'}/>
                   <VehoPicker/>
-                </ScrollView>
-              </View>
+
+                </View>
+              </ScrollView>
             </View>
           </TouchableWithoutFeedback>
           <View style={styles.buttonContainer}>
@@ -40,7 +38,11 @@ function SettingsViewScreen({navigation}) {
             <VehoButton
                 text='Logout'
                 style={styles.logOutButton}
-                onPress={() => navigation.navigate('Auth')}/>
+                onPress={() => {
+                  Keyboard.dismiss();
+                  navigation.navigate('Auth')}}
+                  />
+
           </View>
         </VehoCard>
       </KeyboardAvoidingView>

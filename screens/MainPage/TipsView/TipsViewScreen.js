@@ -6,7 +6,7 @@ import pedals from './Images/pedals.jpg';
 import VehoButton from './../../../components/VehoButton';
 import VehoColors from './../../VehoColors';
 
-import {Text, View, Image, Button} from 'react-native';
+import {Text, View, Image, Button, KeyboardAvoidingView} from 'react-native';
 import VehoCard from '../../../components/VehoDetailContainer';
 
 function TipsViewScreen({navigation}) {
@@ -26,20 +26,22 @@ function TipsViewScreen({navigation}) {
   };
 
   return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.containerAvoid}>
         <VehoCard>
           <Text style={styles.title}>Tips to lower your daily carbon footprint</Text>
-          <View style={styles.photoContainer}>
-            {isPlane ? planePhoto : pedalPhoto}
-          </View>
+          <View style={styles.container}>
+            <View style={styles.photoContainer}>
+              {isPlane ? planePhoto : pedalPhoto}
+            </View>
 
-          {isPlane ? planeTip : pedalTip}
-          <View style={styles.buttonContainer}>
-            <VehoButton text="Next tip" style={styles.button}  onPress={onNextClick}/>
+            {isPlane ? planeTip : pedalTip}
+            <View style={styles.buttonContainer}>
+              <VehoButton text="Next tip" style={styles.button} onPress={onNextClick}/>
+            </View>
           </View>
 
         </VehoCard>
-      </View>
+      </KeyboardAvoidingView>
   );
 }
 
