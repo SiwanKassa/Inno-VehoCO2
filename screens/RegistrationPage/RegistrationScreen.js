@@ -113,8 +113,8 @@ function RegistrationScreen({navigation}) {
               title={'Back to login'}
               style={styles.registerButton}
               onPress={
-                () => props.store.userData.register()
-                /* ()=>navigation.navigate('Login')*/
+                /*() => props.store.userData.register()*/
+                ()=>navigation.navigate('Login')
               }
           >
             <Text style={styles.buttonText}> Back to login </Text>
