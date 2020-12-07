@@ -9,11 +9,11 @@ import {
   AsyncStorage,
   Button,
   Image,
-  KeyboardAvoidingView,
   StyleSheet,
   Platform,
-  TouchableWithoutFeedback,
   Keyboard,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
   ScrollView,
 } from 'react-native';
 import Logo from '../veho_logo.png';
@@ -84,8 +84,8 @@ function LoginScreen({navigation}) {
               </View>
               <View style={styles.inputContainer}>
                 <ScrollView bounces={false} style={styles.containerScroll}>
-                  <VehoTextInput style={styles.input} hint={'Username'}/>
-                  <VehoTextInput style={styles.input} hint={'Password'} secureTextEntry={true}/>
+                  <VehoTextInput hint={'Username'}/>
+                  <VehoTextInput hint={'Password'} secureTextEntry={true}/>
                   {
                     /*<TextInput
                       name={'username'}

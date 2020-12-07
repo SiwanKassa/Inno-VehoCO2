@@ -4,6 +4,7 @@ import VehoColors from '../VehoColors';
 export default StyleSheet.create({
   containerAvoid: {
     flexGrow : 1,
+    width: '100%',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -11,14 +12,15 @@ export default StyleSheet.create({
   },
   container: {
     flex: 1,
+    width: '100%',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: VehoColors.background,
   },
   containerScroll: {
-    flexGrow: 1,
-    width: '80%',
+    flex: 1,
+    width: '100%',
   },
   titleContainer: {
     flex: 1,
@@ -36,27 +38,16 @@ export default StyleSheet.create({
   },
   inputContainer: {
     flex: 1,
+    alignSelf: 'stretch',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
-  },
-  input: {
-    width: 300,
-    fontSize: 20,
-    borderWidth: 1,
-    borderColor: 'white',
-    backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 10,
-    margin: 5,
   },
   buttonContainer:{
     alignSelf: 'stretch',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
   },
   loginButton: {
     alignItems: 'center',
@@ -64,7 +55,7 @@ export default StyleSheet.create({
     backgroundColor: VehoColors.blue,
     width: '100%',
     borderRadius: 10,
-    margin: 5,
+    marginBottom: 10,
   },
   registerButton: {
     alignItems: 'center',
@@ -72,7 +63,6 @@ export default StyleSheet.create({
     backgroundColor: VehoColors.vehoDark,
     width: '100%',
     borderRadius: 10,
-    margin: 5,
+    marginBottom: 10,
   },
-
 });

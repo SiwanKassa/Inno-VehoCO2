@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
+    elevation: 5,
     textAlign: 'center',
     textAlignVertical: 'center',
+    color: VehoColors.white,
     fontWeight: 'bold',
     fontSize: 20,
-    height: '100%',
-    width: '100%',
-    color: VehoColors.white,
+    padding: 15,
   }
 });
 

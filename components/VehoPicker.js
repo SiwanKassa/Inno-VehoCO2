@@ -1,61 +1,57 @@
-import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import React, {useState} from 'react';
+import {View, StyleSheet} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import VehoColors from '../screens/VehoColors';
 
 const VehoPicker = (props) => {
-  const [selectedValue, setSelectedValue] = useState("aseries");
-  
+  const [selectedValue, setSelectedValue] = useState('aseries');
+
   return (
-    <DropDownPicker
-        items={[
-            {label: 'Mercedes-Benz A-series', value: 'aseries'},
-            {label: 'Mercedes-Benz B-series', value: 'bseries'},
-            {label: 'Mercedes-Benz C-series', value: 'cseries'},
-        ]}
-        defaultValue={selectedValue}
-        containerStyle={styles.container}
-        style={styles.picker}
-        labelStyle={styles.label}
-        itemStyle={{
-            justifyContent: 'flex-start',
-        }}
-        dropDownStyle={styles.dropDown}
-        onChangeItem={item => {
-            setSelectedValue(item.value)
-        }}
-    />
+      <View style={styles.containerView}>
+        <DropDownPicker
+            items={[
+              {label: 'Mercedes-Benz A-series', value: 'aseries'},
+              {label: 'Mercedes-Benz B-series', value: 'bseries'},
+              {label: 'Mercedes-Benz C-series', value: 'cseries'},
+            ]}
+            defaultValue={selectedValue}
+            containerStyle={styles.container}
+            style={styles.picker}
+            labelStyle={styles.label}
+            itemStyle={{
+              justifyContent: 'flex-start',
+            }}
+            dropDownStyle={styles.dropDown}
+            onChangeItem={item => {
+              setSelectedValue(item.value);
+            }}
+        />
+      </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    height: 55,
-    width: '90%',
-      marginBottom:10,
-  },
-  button: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    height: '100%',
-    width: '100%',
-    color: VehoColors.white,
+  containerView:{
+    borderRadius: 10,
+    borderWidth: 1,
+    height: 300,
+    borderColor: '#bdc3c7',
+    overflow: 'scroll',
   },
   label: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: VehoColors.white
+    color: VehoColors.white,
+    borderRadius: 10,
   },
   picker: {
     backgroundColor: VehoColors.blue,
-    fontSize: 22,
-    borderColor: '#000000',
-    height: 40,
+    borderWidth: 0,
   },
   dropDown: {
     backgroundColor: VehoColors.input,
     borderWidth: 0,
-  }
+  },
 });
 
 export default VehoPicker;

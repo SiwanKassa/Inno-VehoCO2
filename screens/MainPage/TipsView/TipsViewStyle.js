@@ -36,12 +36,26 @@ export default StyleSheet.create({
     fontSize: 20,
     marginVertical: 12,
   },
-  buttonContainer:{
+  /*buttonContainer:{
     marginTop: 85,
     marginBottom: 20,
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: VehoColors.blue,
+    width: '100%',
+    borderRadius: 10,
+    marginBottom: 10,
+  },*/
+  buttonContainer:{
+    alignSelf: 'stretch',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button: {
     alignItems: 'center',

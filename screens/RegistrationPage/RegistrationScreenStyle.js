@@ -2,19 +2,33 @@ import {StyleSheet} from 'react-native';
 import VehoColors from '../VehoColors';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
+  containerAvoid: {
+    flexGrow : 1,
+    width: '100%',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: VehoColors.background,
-
+  },
+  container: {
+    flex: 1,
+    width: '100%',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: VehoColors.background,
+  },
+  containerScroll: {
+    flexGrow: 1,
+    width: '100%',
   },
   titleContainer: {
-    flex: 2,
+    flex: 1,
     alignSelf: 'stretch',
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'center',
+    padding: 10,
   },
   titleText: {
     fontSize: 40,
@@ -23,51 +37,32 @@ export default StyleSheet.create({
     color: 'white',
   },
   inputContainer: {
-    flex: 5,
+    flex: 1,
     alignSelf: 'stretch',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
   },
-  buttonContainer: {
-marginBottom: 40,
+  buttonContainer:{
+    alignSelf: 'stretch',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  button: {
+  loginButton: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: VehoColors.blue,
-    width: 300,
-    height: 44,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: '#13265f',
-    marginBottom: 10,
+    width: '100%',
     borderRadius: 10,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginBottom: 10,
   },
   registerButton: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#13265f',
-    width: 300,
-    height: 44,
-    borderColor: '#13265f',
+    backgroundColor: VehoColors.vehoDark,
+    width: '100%',
     borderRadius: 10,
-  },
-  input: {
-    width: 300,
-    fontSize: 20,
-    height: 55,
-    padding: 10,
-    borderColor: 'white',
-    marginVertical: 5,
-    backgroundColor: 'white',
-    borderRadius: 10,
+    marginBottom: 10,
   },
 });
