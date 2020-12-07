@@ -80,17 +80,17 @@ function RegistrationScreen({navigation}) {
               placeholderTextColor='grey'
               style={styles.input}
           />
-          <TextInput
-              name={'username'}
-              /*       value={this.state.user.username}*/
-              keyboardType='email-address'
-              /*    onChangeText={ (text)=>{this.handleUsernameChange(text)}}*/
-              placeholder={'password'}
-              placeholderTextColor='grey'
-              style={styles.input}
+          <TextInput secureTextEntry={true}
+                     name={'password'}
+              /*        value={this.state.user.password}
+                      onChangeText={(text)=>{this.handlePasswordChange(text)}}*/
+                     placeholder={'password'}
+              /*   secureTextEntry={true}*/
+                     placeholderTextColor='grey'
+                     style={styles.input}
           />
-          <TextInput
-              name={'password'}
+          <TextInput secureTextEntry={true}
+              name={'repeat-password'}
               /*        value={this.state.user.password}
                       onChangeText={(text)=>{this.handlePasswordChange(text)}}*/
               placeholder={'repeat password'}

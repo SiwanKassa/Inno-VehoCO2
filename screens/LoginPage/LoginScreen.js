@@ -1,7 +1,24 @@
 import * as React from 'react';
 import styles from './LoginScreenStyle.js';
-import {Alert, Text, TouchableOpacity, TextInput, View, AsyncStorage, Button, Image} from 'react-native';
+import {
+  Alert,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  View,
+  AsyncStorage,
+  Button,
+  Image,
+  KeyboardAvoidingView,
+  StyleSheet,
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard,
+  ScrollView,
+} from 'react-native';
 import Logo from '../veho_logo.png';
+import VehoButton from '../../components/VehoButton';
+import VehoTextInput from '../../components/VehoTextInput';
 
 /*import {login, register, getUser, checkUser} from '../../utils/MediaAPI';*/
 
@@ -58,52 +75,60 @@ function LoginScreen({navigation}) {
   */
 
   return (
-      <View style={styles.container}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.titleText}>Welcome To</Text>
-          <Text style={styles.titleText}>VEHO CO2 APP</Text>
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-              name={'username'}
-              /*       value={this.state.user.username}*/
-              keyboardType='email-address'
-              /*    onChangeText={ (text)=>{this.handleUsernameChange(text)}}*/
-              placeholder={'username'}
-              placeholderTextColor='grey'
-              style={styles.input}
-          />
-          <TextInput
-              name={'password'}
-              /*        value={this.state.user.password}
-                      onChangeText={(text)=>{this.handlePasswordChange(text)}}*/
-              placeholder={'password'}
-              /*   secureTextEntry={true}*/
-              placeholderTextColor='grey'
-              style={styles.input}
-          />
+      <KeyboardAvoidingView style={styles.containerAvoid}>
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.container}>
+              <View style={styles.titleContainer}>
+                <Text style={styles.titleText}>Welcome To</Text>
+                <Text style={styles.titleText}>VEHO CO2 APP</Text>
+              </View>
+              <View style={styles.inputContainer}>
+                <ScrollView bounces={false} style={styles.containerScroll}>
+                  <VehoTextInput style={styles.input} hint={'Username'}/>
+                  <VehoTextInput style={styles.input} hint={'Password'} secureTextEntry={true}/>
+                  {
+                    /*<TextInput
+                      name={'username'}
+                      //       value={this.state.user.username}//
+                      keyboardType='email-address'
+                      //    onChangeText={ (text)=>{this.handleUsernameChange(text)}}//
+                      placeholder={'username'}
+                      placeholderTextColor='grey'
+                      style={styles.input}
+                  />
+                  <TextInput secureTextEntry={true}
+                             name={'password'}
+                      //        value={this.state.user.password}
+                              onChangeText={(text)=>{this.handlePasswordChange(text)}}//
+                             placeholder={'password'}
+                      //   secureTextEntry={true}//
+                             placeholderTextColor='grey'
+                             style={styles.input}
+                  />*/
+                  }
+                </ScrollView>
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
 
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-                title={'Login'}
-                style={styles.button}
-                onPress={() => navigation.navigate('App')}
-            >
-              <Text style={styles.buttonText}> Login </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                title={'Register'}
-                style={styles.registerButton}
-                onPress={() => navigation.navigate('Register')}
-            >
-              <Text style={styles.buttonText}> Register </Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.buttonContainer}>
+          <VehoButton title={'Login'}
+                      text="Login"
+                      style={styles.loginButton}
+                      onPress={() => {
+                        Keyboard.dismiss();
+                        navigation.navigate('App');
+                      }}/>
+          <VehoButton title={'Register'}
+                      text="Register"
+                      style={styles.registerButton}
+                      onPress={() => {
+                        Keyboard.dismiss();
+                        navigation.navigate('Register');
+                      }}/>
         </View>
-      </View>
+      </KeyboardAvoidingView>
   );
-
 }
 
 export default LoginScreen;

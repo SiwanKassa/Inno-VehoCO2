@@ -2,19 +2,31 @@ import {StyleSheet} from 'react-native';
 import VehoColors from '../VehoColors';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
+  containerAvoid: {
+    flexGrow : 1,
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: VehoColors.background,
   },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: VehoColors.background,
+  },
+  containerScroll: {
+    flexGrow: 1,
+    width: '80%',
+  },
   titleContainer: {
-    flex: 4,
+    flex: 1,
     alignSelf: 'stretch',
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'center',
-
+    padding: 10,
   },
   titleText: {
     fontSize: 40,
@@ -23,53 +35,44 @@ export default StyleSheet.create({
     color: 'white',
   },
   inputContainer: {
-    flex: 5,
-    alignSelf: 'stretch',
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 100,
-  },
-  buttonContainer:{
-    padding: 200,
-    marginBottom: -200,
-  },
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: VehoColors.blue,
-    width: 300,
-    height: 44,
     padding: 10,
-    marginBottom: 10,
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  registerButton: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderColor: '#13265f',
-    backgroundColor: '#13265f',
-    width: 300,
-    color: 'white',
-    padding: 10,
-    borderRadius: 10,
-
   },
   input: {
     width: 300,
     fontSize: 20,
-    height: 55,
-    padding: 10,
     borderWidth: 1,
     borderColor: 'white',
     backgroundColor: 'white',
-    marginVertical: 5,
     borderRadius: 10,
+    padding: 10,
+    margin: 5,
   },
+  buttonContainer:{
+    alignSelf: 'stretch',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+  },
+  loginButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: VehoColors.blue,
+    width: '100%',
+    borderRadius: 10,
+    margin: 5,
+  },
+  registerButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: VehoColors.vehoDark,
+    width: '100%',
+    borderRadius: 10,
+    margin: 5,
+  },
+
 });
