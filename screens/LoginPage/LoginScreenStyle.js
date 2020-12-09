@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import VehoColors from '../VehoColors';
 
+
 export default StyleSheet.create({
   containerAvoid: {
     flexGrow : 1,

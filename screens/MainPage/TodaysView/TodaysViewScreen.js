@@ -49,7 +49,6 @@ const TodaysViewScreen = (props) => {
 
   /*function for adding the updated data to state when the component renders*/
   useEffect(() => {
-    console.log(props.store.drivingDataStore);
     setGraphicData([
       parseInt(props.store.drivingDataStore.ecoScore.value),
       100 - parseInt(props.store.drivingDataStore.ecoScore.value),
@@ -61,6 +60,7 @@ const TodaysViewScreen = (props) => {
   }, []);
 
   return (
+
       <View style={styles.container}>
         <VehoCard>
           <View style={styles.containerScrollWrapper}>

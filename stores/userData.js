@@ -13,6 +13,7 @@ class UserData {
         car:{},
 
     }
+    //login function
     @action doLogin=async (username,password)=>{
    await login(username,password).then((data)=>{
        console.log(data)
@@ -20,6 +21,7 @@ class UserData {
    })
     }
     ;
+    //registration function
     @action doRegister=async(username,password,fullName)=>{
     await register(username,password,fullName).then((data)=>{
         console.log(data)
@@ -27,6 +29,7 @@ class UserData {
 
     })
     };
+    //bearertoken function
     @action checkForBearerToken=async()=>{
         SecureStore.getItemAsync('authData').then(res=>{
             if(res !=null){
@@ -36,6 +39,7 @@ class UserData {
             }
         });
     };
+    //logout function
     @action doLogOut=()=>{
 
     }

@@ -1,6 +1,6 @@
 const url = 'http://10.114.32.107/app/';
 
-
+//login api call
 const login = (username, password) => {
     const settings = {
         method: 'POST',
@@ -14,6 +14,7 @@ const login = (username, password) => {
     });
 };
 
+//registration api call
 const register = (username, password, fullName) => {
     const userInfo = {
         username: username,

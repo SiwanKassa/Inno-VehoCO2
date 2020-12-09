@@ -15,22 +15,25 @@ const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
 const WeeksViewScreen = (props) => {
-  /*state for holding the graph data*/
-  const [graphicData, setGraphicData] = useState([0, 0]);
-  const [dimensions, setDimensions] = useState({ window, screen });
-  const [shownData, setShownData] = useState(0);
-  const [chartLabelX, setChartLabelX] = useState("Date");
-  const [chartLabelY, setChartLabelY] = useState("Distance km");
+    /*state for holding the graph data*/
+    const [graphicData, setGraphicData] = useState([0, 0]);
+    //state for screen dimensions
+    const [dimensions, setDimensions] = useState({ window, screen });
+    //state for handling what data is shown in the graph
+    const [shownData, setShownData] = useState(0);
+    //state for handling the graph header
+    const [chartLabelY, setChartLabelY] = useState("Distance (km)")
 
-  const onChange = ({ window, screen }) => {
-    setDimensions({ window, screen });
-  };
-
-  const updateData = (num) => {
-    setShownData(num);
-    setGraphicData([]);
-    props.store.drivingDataStore.dummyData.tripSummaries.map((item, key) => {
-      /*[0]=distance, [1] avgFuelConsumption, [2] avg speed, [3] ecoScore */
+//function for updating the screen dimensions
+    const onChange = ({ window, screen }) => {
+        setDimensions({ window, screen });
+    };
+//function for updating the data shown in the graph
+    const updateData=(num)=>{
+        setShownData(num)
+        setGraphicData([])
+        props.store.drivingDataStore.dummyData.tripSummaries.map((item,key)=>{
+            /*[0]=distance, [1] avgFuelConsumption, [2] avg speed, [3] ecoScore */
 
       let value;
       const date = new Date(item.startTimestamp);

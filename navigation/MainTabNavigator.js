@@ -8,11 +8,11 @@ import VehoColors from '../screens/VehoColors';
 import styles from '../screens/MainPage/TodaysView/TodaysViewStyle';
 
 const Tab = createBottomTabNavigator();
-
+//Navigation set up for the bottom tab navigator
 function MainTabNavigator() {
 
   return (
-      /*bottom tab navigator for moving with in the app*/
+      /*bottom tab navigator for moving between the main*/
       <Tab.Navigator
           tabBarOptions={{
             activeBackgroundColor: VehoColors.background,
@@ -23,6 +23,7 @@ function MainTabNavigator() {
               borderTopWidth: 0,
             },
           }}
+          //bottom tab navigator icon setup
           screenOptions={({route}) => ({
             headerShown: true,
             tabBarIcon: ({focused, color, size}) => {

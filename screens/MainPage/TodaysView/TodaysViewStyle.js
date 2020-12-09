@@ -23,7 +23,7 @@ export default StyleSheet.create({
     marginVertical: 24,
   },
   pieContainer: {
-    flex: 4,
+    flex:4,
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "flex-start",
@@ -98,7 +98,7 @@ export default StyleSheet.create({
     elevation: 3
   },
   textStyle: {
-    color: "white",
+      color: "white",
     fontWeight: "bold",
     textAlign: "center"
   },

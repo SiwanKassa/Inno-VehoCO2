@@ -8,7 +8,7 @@ import TodaysViewScreen from "../screens/MainPage/TodaysView/TodaysViewScreen";
 import RootStore from "../stores/rootStore";
 
 const Stack = createStackNavigator();
-
+//the stack navigator for containing auth an main tab navigator
 function AppNavigator(props) {
     return (
         /*navigation container and navigation stack for joining both of the navigators together */

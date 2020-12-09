@@ -1,5 +1,5 @@
 import { observable } from 'mobx'
-/*state management store for driving data*/
+/*store for handling the driving data*/
 class DrivingData {
 
     @observable  dummyData={
