@@ -37,9 +37,9 @@ export default StyleSheet.create({
     alignSelf: 'stretch',
     flexDirection: 'row',
     justifyContent: 'center',
-    alignContent: 'center',
+    alignContent: 'flex-end',
     flexWrap: 'wrap',
-
+    marginBottom: 10,
   },
   buttonText: {
     color: 'white',
@@ -51,11 +51,12 @@ export default StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: VehoColors.blue,
-    width: '40%',
+    backgroundColor: VehoColors.input,
+    width: '45%',
     height: 50,
     borderRadius: 10,
-    margin: 10,
+    margin: 5,
     color: 'white',
+    elevation: 3,
   },
 });

@@ -131,8 +131,8 @@ function RegistrationScreen({navigation}) {
         </TouchableWithoutFeedback>
 
         <View style={styles.buttonContainer}>
-          <VehoButton title={'Login'}
-                      text="Login"
+          <VehoButton title={'Register'}
+                      text="Register"
                       style={styles.loginButton}
                       onPress={() => {
                         Keyboard.dismiss();

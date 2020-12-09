@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     borderRadius: 0,
     height: 200,
     borderWidth: 0,
+    elevation: 3,
   },
   label: {
     width: '100%',
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
     backgroundColor: VehoColors.input,
     borderRadius: 0,
     borderWidth: 0,
+    elevation: 3,
   },
 });
 

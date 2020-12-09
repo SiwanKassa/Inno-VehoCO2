@@ -26,15 +26,15 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 26,
     fontWeight: 'bold',
-    marginVertical: 24,
+    marginTop: 24,
   },
   profilePicContainer:{
     flex: 1,
     alignSelf: 'stretch',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 10,
+    paddingVertical: 24,
   },
   inputContainer: {
     flex: 1,
@@ -48,7 +48,7 @@ export default StyleSheet.create({
     width: 130,
     height: 130,
     borderRadius: 360,
-    elevation: 5,
+    elevation: 3,
   },
   buttonContainer: {
     alignSelf: 'stretch',
@@ -81,6 +81,7 @@ export default StyleSheet.create({
     width: '100%',
     borderRadius: 10,
     marginBottom: 10,
+    elevation: 3,
   },
   logOutButton: {
     alignItems: 'center',
@@ -89,5 +90,6 @@ export default StyleSheet.create({
     width: '100%',
     borderRadius: 10,
     marginBottom: 10,
+    elevation: 3,
   },
 });

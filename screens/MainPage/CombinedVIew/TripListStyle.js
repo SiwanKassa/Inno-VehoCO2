@@ -47,7 +47,7 @@ export default StyleSheet.create({
         fontSize: 26,
         fontWeight: 'bold',
         color:'white',
-        margin: 15,
+        margin: 24,
     },
     separator: {
         marginVertical: 30,

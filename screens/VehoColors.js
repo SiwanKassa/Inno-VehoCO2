@@ -7,6 +7,7 @@ const VehoColors = {
     red: '#ff0026',
     card: '#2F3F94',
     background: '#202E77',
+    icon: '#293b99',
     input: '#3A4CB0',
     pink: '#E22583',
     purple: '#8C45BB',

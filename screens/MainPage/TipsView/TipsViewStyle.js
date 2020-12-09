@@ -28,14 +28,14 @@ export default StyleSheet.create({
     flex: 1.3,
     alignSelf: 'stretch',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
   image: {
     borderRadius: 10,
     width: '90%',
     height: '80%',
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   },
   tipText: {
     flex: 1,
@@ -77,5 +77,6 @@ export default StyleSheet.create({
     width: '100%',
     borderRadius: 10,
     marginBottom: 10,
+    elevation: 3,
   },
 });

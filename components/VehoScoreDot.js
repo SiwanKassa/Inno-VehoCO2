@@ -39,11 +39,13 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 20,
   },
   dot: {
     height: 40,
     width: 40,
     borderRadius: 100,
+    elevation: 3,
     alignSelf: "center",
     justifyContent: "center",
     backgroundColor: VehoColors.white,

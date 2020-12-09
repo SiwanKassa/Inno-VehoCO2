@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     height: 40,
     width: "95%",
     borderRadius: 15,
-    backgroundColor: VehoColors.card,
-    elevation: 10,
+    backgroundColor: VehoColors.input,
+    elevation: 3,
     flexDirection: "row",
     paddingRight: 8,
     marginBottom: 8

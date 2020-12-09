@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   input: {
-    elevation: 5,
+    elevation: 3,
     width: '100%',
     fontSize: 20,
     backgroundColor: VehoColors.input,

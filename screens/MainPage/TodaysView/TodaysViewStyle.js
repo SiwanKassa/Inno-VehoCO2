@@ -10,7 +10,7 @@ export default StyleSheet.create({
     backgroundColor: VehoColors.background,
   },
   headerContainer: {
-    flex: 2,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -26,17 +26,18 @@ export default StyleSheet.create({
     flex: 4,
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "flex-end",
-    marginTop: -24,
+    justifyContent: "flex-start",
+    marginTop: -25,
   },
   dataContainer: {
     flex: 1,
     width: '90%',
     textAlign: "left",
     backgroundColor: VehoColors.input,
-    borderRadius: 25,
+    borderRadius: 15,
     marginVertical: 12,
-    paddingVertical: 12
+    paddingVertical: 12,
+    elevation: 3,
   },
   dataBox: {
     marginBottom: 10,
@@ -49,18 +50,6 @@ export default StyleSheet.create({
     alignItems: "flex-start",
     color: "white",
     fontSize: 20,
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-  photoContainer: {
-    width: '80%',
-    height: 60,
-    marginTop: 24,
-    justifyContent: "center",
-    alignItems: "center",
   },
   dotContainer: {
     width: '80%',
@@ -87,12 +76,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 10,
   },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22
-  },
   modalView: {
     margin: 20,
     backgroundColor: "white",
@@ -106,13 +89,13 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5
+    elevation: 3
   },
   openButton: {
     backgroundColor: "#F194FF",
     borderRadius: 20,
     padding: 10,
-    elevation: 2
+    elevation: 3
   },
   textStyle: {
     color: "white",

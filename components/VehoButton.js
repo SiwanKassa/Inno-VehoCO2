@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   button: {
-    elevation: 5,
+    elevation: 3,
     textAlign: 'center',
     textAlignVertical: 'center',
     color: VehoColors.white,

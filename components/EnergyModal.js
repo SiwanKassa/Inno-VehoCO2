@@ -11,7 +11,7 @@ import {
   Animated,
   TextInput,
   Button,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
 } from "react-native";
 import VehoColors from "../screens/VehoColors";
 import Modal from "react-native-modal";
@@ -47,7 +47,8 @@ const EnergyModal = (props) => {
       isVisible={props.visible}
       onSwipeComplete={() => props.toggleOff(false)}
       swipeDirection="down"
-      hasBackdrop={false}
+      hasBackdrop={true}
+      backdropOpacity={0.5}
       propagateSwipe={true}
       avoidKeyboard={true}
     >
@@ -57,7 +58,7 @@ const EnergyModal = (props) => {
             ...styles.container,
             height: heightAnim.interpolate({
               inputRange: [0, 1],
-              outputRange: ["40%", "65%"],
+              outputRange: ["42%", "65%"],
             }),
           }}
         >
@@ -100,7 +101,7 @@ const EnergyModal = (props) => {
               <TextInput style={styles.textInput} placeholder="Station code" />
               <VehoButton
                 text="Start charging!"
-                color={VehoColors.pink}
+                color={VehoColors.blue}
                 style={styles.submitButton}
                 onPress={() => {
                   props.toggleOff(false);
@@ -118,18 +119,17 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: VehoColors.background,
     width: "100%",
-    height: "50%",
+    height: "70%",
     borderRadius: 20,
+    elevation: 3,
   },
   containerAvoid: {
     width: '100%',
-    height: '40%'
-    
   },
   headerContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    paddingHorizontal: 16,
+    paddingHorizontal: 10,
   },
   subheaderContainer: {
     flexDirection: "row",
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "90%",
     padding: 22,
-    marginVertical: 12,
+    marginVertical: 5,
   },
   box: {
     backgroundColor: VehoColors.input,
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     backgroundColor: VehoColors.input,
-    borderRadius: 20,
+    borderRadius: 10,
     width: "90%",
     fontSize: 24,
     padding: 12,

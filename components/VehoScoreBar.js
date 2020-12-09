@@ -35,15 +35,16 @@ const VehoScoreDot = (props) => {
       <View style={styles.iconContainer}>
         <MaterialCommunityIcons
           name={props.icon}
-          color={VehoColors.background}
-          size={40}
+          color={VehoColors.icon}
+          size={30}
         />
       </View>
       <TouchableOpacity style={styles.touchable} onPress={props.showModal}>
         <Animated.View
           style={{
             ...styles.bar,
-            backgroundColor: VehoColors.input,
+            backgroundColor: VehoColors.background,
+            elevation: 3,
             width: widthAnim.interpolate({
               inputRange: [0, 1],
               outputRange: ["0%", "90%"],
@@ -78,21 +79,23 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   iconContainer: {
-    height: 50,
-    width: 50,
+    height: 40,
+    width: 40,
     marginLeft: 25,
     borderRadius: 100,
+    elevation: 3,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: VehoColors.blue,
   },
   co2: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: "bold",
     width: "100%",
-    textAlign: "center",
+    textAlign: "left",
     textAlignVertical: "center",
     justifyContent: "center",
+    padding: 10,
     color: VehoColors.white,
   },
   bar: {

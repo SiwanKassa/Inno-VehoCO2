@@ -120,21 +120,21 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     alignItems: "center",
-    paddingTop: 5,
+    paddingBottom: 10,
   },
   itemContainer: {
     height: 60,
     width: "95%",
-    borderRadius: 15,
-    backgroundColor: VehoColors.card,
-    elevation: 10,
+    borderRadius: 10,
+    backgroundColor: VehoColors.input,
+    elevation: 3,
     flexDirection: "row",
   },
   expanded: {
     width: "95%",
-    borderRadius: 15,
+    borderRadius: 10,
     backgroundColor: VehoColors.primary,
-    elevation: 10,
+    elevation: 3,
     flexDirection: "row",
   },
   date: {
@@ -164,9 +164,9 @@ const expandedStyles = StyleSheet.create({
   expanded: {
     alignSelf: "center",
     width: "95%",
-    borderRadius: 15,
-    backgroundColor: VehoColors.input,
-    elevation: 10,
+    borderRadius: 10,
+    backgroundColor: VehoColors.blue,
+    elevation: 3,
     paddingVertical: 12,
   },
   keyValueContainer: {
