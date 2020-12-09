@@ -106,6 +106,7 @@ const ShoppingModal = (props) => {
           hasBackdrop={true}
           backdropOpacity={0.5}
           propagateSwipe={true}
+          onBackButtonPress={() => props.toggleOff(false)}
       >
         <View style={styles.container}>
           <View style={styles.pullerContainer} onTouchMove={() => {}}>

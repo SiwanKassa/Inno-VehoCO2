@@ -51,6 +51,7 @@ const EnergyModal = (props) => {
       backdropOpacity={0.5}
       propagateSwipe={true}
       avoidKeyboard={true}
+      onBackButtonPress={() => props.toggleOff(false)}
     >
 
         <Animated.View
