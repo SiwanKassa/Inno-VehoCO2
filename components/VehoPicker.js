@@ -9,9 +9,9 @@ const VehoPicker = (props) => {
   return (
       <DropDownPicker
           items={[
-            {label: 'Mercedes-Benz A-series', value: 'aseries'},
-            {label: 'Mercedes-Benz B-series', value: 'bseries'},
-            {label: 'Mercedes-Benz C-series', value: 'cseries'},
+            {label: 'Mercedes-Benz A 250e', value: 'aseries'},
+            {label: 'Mercedes-Benz C 200', value: 'cseries'},
+            {label: 'Mercedes-Benz E 500', value: 'eseries'},
           ]}
           defaultValue={selectedValue}
           containerStyle={styles.container}
