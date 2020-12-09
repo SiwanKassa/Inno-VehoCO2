@@ -103,7 +103,7 @@ const TodaysViewScreen = (props) => {
                             {fill: 'white', fontSize: 46, fontWeight: 'bold'},
                           ]}
                           x={dimensions.screen.width * 0.5}
-                          y={dimensions.screen.height * 0.23}
+                          y={dimensions.screen.height * 0.21}
                           textAnchor="middle"
                           verticalAnchor="middle"
                           text={`Eco score \n${props.store.drivingDataStore.ecoScore.value}`}
