@@ -34,6 +34,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color:'white',
         width: '40%',
+        textAlign: 'center',
         paddingRight: 10
     },
     listContainer: {

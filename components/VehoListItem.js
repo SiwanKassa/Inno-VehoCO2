@@ -145,8 +145,9 @@ const styles = StyleSheet.create({
   eco: {
     fontSize: 26,
     fontWeight: "bold",
-    paddingRight: 10,
+    paddingRight: '15%',
     color: "#ffffff",
+    textAlign: 'right'
   },
   dateContainer: {
     width: "60%",

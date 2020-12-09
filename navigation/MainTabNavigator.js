@@ -17,6 +17,7 @@ function MainTabNavigator() {
           tabBarOptions={{
             activeBackgroundColor: VehoColors.background,
             inactiveBackgroundColor: VehoColors.background,
+            inactiveTintColor: VehoColors.input,
             keyboardHidesTabBar: true,
             style: styles.containerTabBar = {
               borderTopWidth: 0,
