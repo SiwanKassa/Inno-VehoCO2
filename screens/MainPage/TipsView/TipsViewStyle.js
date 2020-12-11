@@ -7,7 +7,7 @@ export default StyleSheet.create({
     width: '100%',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: VehoColors.background,
   },
   container: {

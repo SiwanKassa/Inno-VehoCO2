@@ -1,7 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import VehoColors from "../screens/VehoColors";
-import { LinearGradient } from "expo-linear-gradient";
 
 const VehoDetailContainer = (props) => {
 return <View style={styles.container}>{props.children}</View>;
@@ -9,7 +8,6 @@ return <View style={styles.container}>{props.children}</View>;
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
     width: "95%",
     height: "93%",
     borderRadius: 20,
@@ -18,6 +16,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     overflow:'hidden',
+    marginTop: 25,
   }
 });
 

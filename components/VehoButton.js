@@ -5,7 +5,7 @@ import VehoColors from '../screens/VehoColors';
 const VehoButton = (props) => {
 
   return (
-  <View style={styles.container} backgroundColor={props.color}>
+  <View style={styles.container} backgroundColor={props.color} marginBottom={props.margin}>
     <TouchableOpacity
       {...props}
       containerViewStyle={styles.button}>

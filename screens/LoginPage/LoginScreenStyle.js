@@ -30,8 +30,6 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     padding: 10,
-    marginTop: -50,
-    marginBottom: 50,
   },
   titleText: {
     fontSize: 40,
