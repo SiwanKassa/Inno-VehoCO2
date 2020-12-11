@@ -19,7 +19,6 @@ const VehoTextInput = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignSelf: 'center',
     alignItems: 'center',
     width: '90%',
