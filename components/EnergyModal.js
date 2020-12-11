@@ -1,4 +1,4 @@
-import React, { Component, useState, useRef } from "react";
+import React, {Component, useState, useRef} from 'react';
 import {
   View,
   StyleSheet,
@@ -12,11 +12,12 @@ import {
   TextInput,
   Button,
   KeyboardAvoidingView,
-} from "react-native";
-import VehoColors from "../screens/VehoColors";
-import Modal from "react-native-modal";
-import VehoTextInput from "./VehoTextInput";
-import VehoButton from "./VehoButton";
+  ScrollView,
+} from 'react-native';
+import VehoColors from '../screens/VehoColors';
+import Modal from 'react-native-modal';
+import VehoTextInput from './VehoTextInput';
+import VehoButton from './VehoButton';
 
 const EnergyModal = (props) => {
   let heightAnim = useRef(new Animated.Value(0)).current;
@@ -41,86 +42,88 @@ const EnergyModal = (props) => {
 
   return (
 
-    <Modal
-      animationType="slide"
-      transparent={true}
-      isVisible={props.visible}
-      onSwipeComplete={() => props.toggleOff(false)}
-      swipeDirection="down"
-      hasBackdrop={true}
-      backdropOpacity={0.5}
-      propagateSwipe={true}
-      avoidKeyboard={true}
-      onBackButtonPress={() => props.toggleOff(false)}
-    >
+      <Modal
+          animationType="slide"
+          transparent={true}
+          isVisible={props.visible}
+          onSwipeComplete={() => props.toggleOff(false)}
+          swipeDirection="down"
+          hasBackdrop={true}
+          backdropOpacity={0.5}
+          propagateSwipe={true}
+          avoidKeyboard={true}
+          onBackButtonPress={() => props.toggleOff(false)}
+      >
 
         <Animated.View
-          style={{
-            ...styles.container,
-            height: heightAnim.interpolate({
-              inputRange: [0, 1],
-              outputRange: ["42%", "65%"],
-            }),
-          }}
+            style={{
+              ...styles.container,
+              height: heightAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: ['42%', '65%'],
+              }),
+            }}
         >
-          <View style={styles.pullerContainer} onTouchMove={() => {}}>
-            <View style={styles.puller} />
-          </View>
-          <View style={styles.headerContainer}>
-            <Text style={styles.modalHeader}>Todays Energy</Text>
-          </View>
+          <ScrollView>
+            <View style={styles.pullerContainer} onTouchMove={() => {
+            }}>
+              <View style={styles.puller}/>
+            </View>
+            <View style={styles.headerContainer}>
+              <Text style={styles.modalHeader}>Todays Energy</Text>
+            </View>
 
-          <View style={styles.boxContainer}>
-            <View style={styles.box}>
-              <Text style={styles.score}>
-                45<Text style={styles.smallScore}>kWh</Text>
-              </Text>
-              <Text style={styles.smallText}>Today</Text>
+            <View style={styles.boxContainer}>
+              <View style={styles.box}>
+                <Text style={styles.score}>
+                  45<Text style={styles.smallScore}>kWh</Text>
+                </Text>
+                <Text style={styles.smallText}>Today</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.score}>
+                  6.3<Text style={styles.smallScore}>kWh</Text>
+                </Text>
+                <Text style={styles.smallText}>Cars use</Text>
+              </View>
             </View>
-            <View style={styles.box}>
-              <Text style={styles.score}>
-                6.3<Text style={styles.smallScore}>kWh</Text>
-              </Text>
-              <Text style={styles.smallText}>Cars use</Text>
-            </View>
-          </View>
-          <TouchableOpacity
-            style={styles.largeBoxContainer}
-            onPress={startAnim}
-          >
-            <View style={styles.largeBox}>
-              <Text style={styles.score}>
-                412<Text style={styles.smallScore}> points</Text>
-              </Text>
-              <Text style={styles.smallScore}>Consume points</Text>
-            </View>
-          </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.largeBoxContainer}
+                onPress={startAnim}
+            >
+              <View style={styles.largeBox}>
+                <Text style={styles.score}>
+                  412<Text style={styles.smallScore}> points</Text>
+                </Text>
+                <Text style={styles.smallScore}>Consume points</Text>
+              </View>
+            </TouchableOpacity>
 
-          {showDetails ? (
-            <Animated.View style={{ ...styles.details, opacity: opacAnim }}>
-              <Text style={styles.smallScore}>Input station code</Text>
-              <TextInput style={styles.textInput} placeholder="Station code" />
-              <VehoButton
-                text="Start charging!"
-                color={VehoColors.blue}
-                style={styles.submitButton}
-                onPress={() => {
-                  props.toggleOff(false);
-                }}
-              />
-            </Animated.View>
-          ) : null}
+            {showDetails ? (
+                <Animated.View style={{...styles.details, opacity: opacAnim}}>
+                  <Text style={styles.smallScore}>Input station code</Text>
+                  <TextInput style={styles.textInput} placeholder="Station code"/>
+                  <VehoButton
+                      text="Start charging!"
+                      color={VehoColors.blue}
+                      margin={20}
+                      onPress={() => {
+                        props.toggleOff(false);
+                      }}
+                  />
+                </Animated.View>
+            ) : null}
+          </ScrollView>
         </Animated.View>
-
-    </Modal>
+      </Modal>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: VehoColors.background,
-    width: "100%",
-    height: "70%",
+    width: '100%',
+    height: '70%',
     borderRadius: 20,
     elevation: 3,
   },
@@ -128,58 +131,58 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   headerContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
     paddingHorizontal: 10,
   },
   subheaderContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: "6%",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: '6%',
   },
   pullerContainer: {
-    width: "100%",
-    height: "6%",
+    width: '100%',
+    height: '6%',
   },
   puller: {
-    height: "10%",
+    height: '10%',
     margin: 12,
-    width: "33%",
-    alignSelf: "center",
+    width: '33%',
+    alignSelf: 'center',
     borderRadius: 4,
     backgroundColor: VehoColors.white,
   },
   modalView: {
-    alignSelf: "center",
+    alignSelf: 'center',
   },
   boxContainer: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
   },
   largeBoxContainer: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
   },
   largeBox: {
     backgroundColor: VehoColors.input,
     borderRadius: 8,
-    alignItems: "center",
-    width: "90%",
+    alignItems: 'center',
+    width: '90%',
     padding: 22,
     marginVertical: 5,
   },
   box: {
     backgroundColor: VehoColors.input,
     borderRadius: 8,
-    alignItems: "center",
-    width: "43%",
-    padding: "2%",
+    alignItems: 'center',
+    width: '43%',
+    padding: '2%',
     marginVertical: 12,
   },
   score: {
     color: VehoColors.white,
     fontSize: 46,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   smallScore: {
     color: VehoColors.white,
@@ -191,25 +194,25 @@ const styles = StyleSheet.create({
   subHeader: {
     color: VehoColors.white,
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   modalHeader: {
     fontSize: 26,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: VehoColors.white,
     marginBottom: 6,
-    alignSelf: "center",
-    textAlign: "center",
+    alignSelf: 'center',
+    textAlign: 'center',
   },
   details: {
-    justifyContent: "center",
-    width: "100%",
-    alignItems: "center",
+    justifyContent: 'center',
+    width: '100%',
+    alignItems: 'center',
   },
   textInput: {
     backgroundColor: VehoColors.input,
     borderRadius: 10,
-    width: "90%",
+    width: '90%',
     fontSize: 24,
     padding: 12,
     margin: 12,
