@@ -3,7 +3,7 @@ import VehoColors from '../../VehoColors'
 
 export default StyleSheet.create({
     container: {
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems:'center',
         flexDirection: 'column',
         backgroundColor: VehoColors.background,
