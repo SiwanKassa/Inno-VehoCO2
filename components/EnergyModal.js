@@ -24,6 +24,10 @@ const EnergyModal = (props) => {
   let opacAnim = useRef(new Animated.Value(0)).current;
   let [showDetails, setShowDetails] = useState(false);
 
+  /**
+   * Animation timers
+   */
+
   const startAnim = () => {
     setShowDetails(true);
     Animated.timing(heightAnim, {

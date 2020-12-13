@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
 import VehoColors from '../screens/VehoColors';
 
+/**
+ * Text input used across the application. Can be given more styles with the spread-syntax.
+ */
+
 const VehoTextInput = (props) => {
   const [value, onChangeText] = React.useState('');
 

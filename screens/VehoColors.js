@@ -1,3 +1,7 @@
+/**
+ * Global variables for using colors in the app.
+ */
+
 const VehoColors = {
 
     primary: '#0600ff',

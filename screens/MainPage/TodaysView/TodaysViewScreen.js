@@ -31,6 +31,10 @@ const TodaysViewScreen = (props) => {
 
   let opacAnim = useRef(new Animated.Value(0)).current;
 
+  /**
+   * Animation timer
+   */
+
   useEffect(() => {
     Animated.timing(opacAnim, {
       toValue: 1,
@@ -39,6 +43,10 @@ const TodaysViewScreen = (props) => {
       delay: 500,
     }).start();
   }, [opacAnim]);
+
+  /**
+   * States for showing/dismissing modals
+   */
 
   const [shoppingModalVisible, setShoppingModalVisible] = useState(false);
   const [energyModalVisible, setEnergyModalVisible] = useState(false);

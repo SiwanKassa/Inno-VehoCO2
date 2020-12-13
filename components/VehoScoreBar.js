@@ -10,9 +10,18 @@ import VehoColors from "../screens/VehoColors";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+/**
+ * Component used to show the user their current emissions from different sources
+ * Props are used to give different icon and to show progression
+ */
+
 const VehoScoreDot = (props) => {
   let widthAnim = useRef(new Animated.Value(0)).current;
   let opacAnim = useRef(new Animated.Value(0)).current;
+
+  /**
+   * Animation timers
+   */
 
   React.useEffect(() => {
     Animated.timing(widthAnim, {

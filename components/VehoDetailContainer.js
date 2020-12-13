@@ -2,6 +2,10 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import VehoColors from "../screens/VehoColors";
 
+/**
+ * Used to wrap the tab-views with the same container. Passes all the child-views inside itself
+ */
+
 const VehoDetailContainer = (props) => {
 return <View style={styles.container}>{props.children}</View>;
 };

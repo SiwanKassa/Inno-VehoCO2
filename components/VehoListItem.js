@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import VehoColors from "../screens/VehoColors";
 
+/**
+ * Item used to render trip-history items. 
+ */
+
 const VehoListItem = (props) => {
   const [ecoColor, setEcoColor] = useState("#ffffff");
   const [selected, setSelected] = useState(true);
@@ -9,6 +13,11 @@ const VehoListItem = (props) => {
   const handleClick = (event) => {
     setSelected(!selected);
   };
+
+  /**
+   * Used to show the user human-readable time format from the javascript Date-object
+   * @param {*} itemDate 
+   */
 
   const parseDate = (itemDate) => {
     const date = new Date(itemDate);
@@ -31,6 +40,11 @@ const VehoListItem = (props) => {
     return score;
   };
 
+
+  /**
+   * Change the score-color based on the score received
+   * @param {*} score 
+   */
   const parseColor = (score) => {
       if (score < 50) {
           return VehoColors.red
@@ -40,6 +54,10 @@ const VehoListItem = (props) => {
           return VehoColors.green
       }
   }
+
+  /**
+   * Render different component depending on if the item is selected or not.
+   */
 
   if (selected) {
     return (

@@ -10,6 +10,11 @@ import Modal from 'react-native-modal';
 import ShopListItem from './../components/ShopListItem';
 
 const ShoppingModal = (props) => {
+
+  /**
+   * Flatlist item to render
+   */
+
   const renderItem = ({item}) => (
       <ShopListItem
           key={item.key}

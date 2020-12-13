@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import VehoColors from '../screens/VehoColors';
 
+/**
+ * Custom button component to be used anywhere in the application.
+ * Uses specified styling but can be given more css-styles with the spread-syntax
+ */
+
 const VehoButton = (props) => {
 
   return (

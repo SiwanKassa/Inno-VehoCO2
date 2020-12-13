@@ -9,6 +9,10 @@ import VehoDetailContainer from "./../../../components/VehoDetailContainer";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
+/**
+ * Screen to show users recent car trips.
+ */
+
 function TripListScreen(props) {
   const [selectedId, setSelectedId] = useState(null);
 
@@ -22,7 +26,6 @@ function TripListScreen(props) {
   );
 
   return (
-    /*screen for home/main view*/
     <View style={styles.container}>
       <VehoDetailContainer
         style={{

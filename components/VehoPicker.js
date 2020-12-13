@@ -3,6 +3,10 @@ import {View, StyleSheet} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import VehoColors from '../screens/VehoColors';
 
+/**
+ * Component used to change users active car.
+ */
+
 const VehoPicker = (props) => {
   const [selectedValue, setSelectedValue] = useState('aseries');
 

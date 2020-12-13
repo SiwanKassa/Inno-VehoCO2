@@ -9,6 +9,10 @@ import {
 import { TextSize } from "victory-native";
 import VehoColors from "../screens/VehoColors";
 
+/**
+ * Show users total emissions for the given day
+ */
+
 const VehoScoreDot = (props) => {
   let opacAnim = useRef(new Animated.Value(0)).current;
 
